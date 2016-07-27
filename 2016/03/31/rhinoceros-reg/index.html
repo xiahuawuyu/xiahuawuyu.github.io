@@ -1,0 +1,784 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="sogou_site_verification" content="WEhegz1Bts"/>
+<meta name="360-site-verification" content="ab30d6f9900b55bcfa635dbcf869b683" />
+
+  <meta name="google-site-verification" content="V9_Ys0xWOwD0m2gXTYo15k9tyfvl16H4YE5ijFHyo50" />
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="阅读，实践，学习，积累，分享" />
+
+
+
+  <meta name="keywords" content="js,读书," />
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="亚里士朱德的博客" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'always'
+  };
+</script>
+
+
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?ab4daa880e07842428ff185fb1edbd6d";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+  <title> 一起来啃犀牛书：正则表达式 // 亚里士朱德的博客 </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">亚里士朱德的博客</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-subscribe">
+          <a href="/subscribe">
+            <i class="menu-item-icon icon-subscribe"></i> <br />
+            订阅博客
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html">
+            <i class="menu-item-icon icon-commonweal"></i> <br />
+            公益404
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              一起来啃犀牛书：正则表达式
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2016-03-31
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/js/">js</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2016/03/31/rhinoceros-reg/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/31/rhinoceros-reg/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <blockquote>
+<p>《javascript权威指南》这本书就像是js界的圣经，对于大神和新手都应该是必读书。但是这本近千页的书已经厚到让人望而生畏，要通读它不仅要时间也需要毅力。为了提升自己在js语言上的深度，所以抱着工匠精神开始研读，此文包含书中实用性较强的一些知识点和代码，算做读书笔记吧~</p>
+</blockquote>
+<img src="/2016/03/31/rhinoceros-reg/reg.png" alt="reg.png" title="">
+<a id="more"></a>
+<p>正则表达式这一章一直是我最困惑的，因为每次看完都会忘。。。所以这次我首先对知识点进行了梳理，然后配上习题练习，以此巩固。<br>从js正则表达式示意图可以看出，正则表达式分两块，一是声明定义二是函数调用。声明定义又可以分3块一是直接字符和字符类，然后是对字符（类）的描述，如重复、分组等，最后是修饰符，如大小写、全局匹配等。函数调用分为字符串用到正则表达式的函数和RegExp对象的原型函数。</p>
+<h1 id="正则表达式定义">正则表达式定义</h1><p>js中可以使用构造函数来创建也可以使用斜杠。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pattern = <span class="regexp">/s$/</span>;</span><br><span class="line"><span class="comment">//等价于</span></span><br><span class="line"><span class="keyword">var</span> pattern = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'s$'</span>);</span><br></pre></td></tr></table></figure></p>
+<p><strong>但是注意，在ES5规范中正则表达式和字符串常量不一样，每次声明都会重新创建变量，所以<code>/s$/!==new RegExp(&#39;s$&#39;)</code>。</strong></p>
+<h2 id="转义字符">转义字符</h2><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\0</span>    NUL字符（<span class="string">\u0000）</span></span><br><span class="line"><span class="string">\t</span>    制表符（<span class="string">\0009）</span></span><br><span class="line"><span class="string">\n</span>    换行符（<span class="string">\000A）</span></span><br><span class="line"><span class="string">\v</span>    垂直制表符（<span class="string">\u000B）</span></span><br><span class="line"><span class="string">\f</span>    换页符（<span class="string">\000C）</span></span><br><span class="line"><span class="string">\r</span>    回车符（<span class="string">\000D）</span></span><br><span class="line"><span class="string">\xnn</span>  十六进制拉丁字符</span><br><span class="line"><span class="string">\uxxxx十六进制unicode字符</span></span><br><span class="line"><span class="string">\cX</span>	  控制字符</span><br></pre></td></tr></table></figure>
+<p>这些转义字符中比较常用的就是换行符了，其他记不住可以上网查。还有一些字符具有特殊含义，如果需要匹配这些字符的时候需要在前面加上反斜杠进行转义。<br><code>^ $ . * + | \ / ( ) [ ] { }</code><br>其中”/“只在”/\//“这种方式声明的时候需要转义，而在”new RegExp(‘/‘)”时不需要</p>
+<h2 id="字符类">字符类</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr_selector">[...]</span>   方括号内任意字符</span><br><span class="line"><span class="attr_selector">[^...]</span>  不在方括号内任意字符</span><br><span class="line">.       除换行符和其他<span class="tag">unicode</span>行终止符之外的任意字符</span><br><span class="line">\<span class="tag">w</span>      等价于<span class="attr_selector">[a-zA-Z0-9]</span></span><br><span class="line">\<span class="tag">W</span>      等价于<span class="attr_selector">[^a-zA-Z0-9]</span></span><br><span class="line">\<span class="tag">s</span>      任何<span class="tag">unicode</span>空白符</span><br><span class="line">\<span class="tag">S</span>      任何非<span class="tag">unicode</span>空白符</span><br><span class="line">\<span class="tag">d</span>      等价于<span class="attr_selector">[0-9]</span></span><br><span class="line">\<span class="tag">D</span>      等价于<span class="attr_selector">[^0-9]</span></span><br><span class="line"><span class="attr_selector">[\b]</span>    退格</span><br></pre></td></tr></table></figure>
+<p>这个字符类很重要，需要记忆。</p>
+<h2 id="描述方式：重复">描述方式：重复</h2><h3 id="知识点">知识点</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="keyword">n</span>,<span class="keyword">m</span>&#125;   匹配前一项至少<span class="keyword">n</span>次，不超过<span class="keyword">m</span>次</span><br><span class="line">&#123;<span class="keyword">n</span>,&#125;    匹配前一项至少<span class="keyword">n</span>次</span><br><span class="line">&#123;<span class="keyword">n</span>&#125;     匹配前一项<span class="keyword">n</span>次</span><br><span class="line">?       等价于&#123;0,1&#125;</span><br><span class="line">+       等价于&#123;1,&#125;</span><br><span class="line"><span class="comment">*       等价于&#123;0,&#125;</span></span><br><span class="line">x?      描述符后跟随一个<span class="string">"?"</span>表示非贪婪匹配：从字符串中第一个可能匹配的位置，尽量少的匹配。如“??”、“&#123;1,5&#125;?”等。</span><br></pre></td></tr></table></figure>
+<h3 id="习题">习题</h3><ul>
+<li><p>匹配2~4个数字</p>
+</li>
+<li><p>精确匹配3个单词和一个可选数字</p>
+</li>
+<li><p>匹配前后带有一个或多个空格的字符串”java”</p>
+</li>
+<li><p>匹配一个或多个非左括号的字符</p>
+</li>
+</ul>
+<h2 id="描述方式：选择、分组和引用">描述方式：选择、分组和引用</h2><p>“|”与逻辑表达式中的或类似，前后两者任意一个匹配，很好理解。而圆括号用来分组和引用，功能就比较复杂了。</p>
+<ul>
+<li>把单独的项组合成子表达式，以便重复、选择等操作。</li>
+<li>完整的模式中定义子模式，从而在匹配成功后从目标串中抽出和圆括号中的子模式匹配的部分。</li>
+<li>同一个正则表达式中后部引用前部的正则表达式，注意因为子表达式可以嵌套，所以它的位置是参与计数的左括号的位置。如果不创建带数字编码的引用，可以用”(?:”和”)”表示。</li>
+</ul>
+<p>举个简单的例子，如果要匹配单引号或双引号中的字符，可能会写成下面这样：<br><code>/[&#39;&quot;][^&#39;&quot;]*[&#39;&quot;]/</code><br>但是如果我们是想成对的匹配’abc’而不是匹配’abc”的话需要这么改写：<br><code>/([&#39;&quot;])[^&#39;&quot;]*\1/</code></p>
+<h3 id="习题-1">习题</h3><p>匹配浮点数</p>
+<h2 id="锚">锚</h2><p>指定匹配位置的元素称为锚。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">^     匹配字符串开头，多行匹配一行的开头</span><br><span class="line"><span class="formula">$     匹配字符串结尾，多行匹配一行的结尾</span><br><span class="line"><span class="command">\b</span>    匹配一个单词的边界，位于<span class="command">\w</span>和<span class="command">\W</span>之间的位置</span><br><span class="line"><span class="command">\B</span>    匹配非单词边界</span><br><span class="line">(?=p) 要求接下来的字符都与p匹配，但不能包括匹配p的那些字符</span><br><span class="line">(?!p) 要求接下来的字符不与p匹配</span></span><br></pre></td></tr></table></figure>
+<p>这个”^”似曾相识？嗯，它在”[]”内的时候表示逻辑非，而在其它地方就成了锚字符了。<br>“\b”在”[]”中表示退格符，其它地方单词边界。怎么理解呢？比如我们想匹配”java”这个单词，那么我们如果只写/java/肯定是不行的，因为会匹配上javascript这类单词。那么加上空格符/\sjava\s/匹配呢？这样做也是有问题的，一个是多行情况下行首尾没有空格就匹配不了，二是实际上我们想得到的匹配字符串是”java”而不是带空格的” java “。所以这个时候就需要单词边界来表示/\bjava\b/。而\B正好相反。<br>而之后的断言不知道有什么妙用，看起来<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">(?=p)</span></span><br><span class="line"><span class="comment">//等价于</span></span><br><span class="line">p</span><br><span class="line"></span><br><span class="line"><span class="comment">(?!p)</span></span><br><span class="line"><span class="comment">//等价于</span></span><br><span class="line">[^p]</span><br></pre></td></tr></table></figure></p>
+<h2 id="修饰符">修饰符</h2><ul>
+<li>i。忽略大小写</li>
+<li>m。多行匹配模式</li>
+<li>g。全局匹配</li>
+</ul>
+<h1 id="字符串中的模式匹配">字符串中的模式匹配</h1><h2 id="search">search</h2><p>查找匹配的字符串，不支持全局匹配，返回第一个子串的起始位置。</p>
+<p><code>&quot;JavaScript&quot;.search(/script/i) //4</code></p>
+<h2 id="match">match</h2><p>返回由匹配结果组成的数组，默认返回第一个匹配的字符串，如果全局匹配则返回所有匹配字符串。当使用括号分组的时候第一个元素为匹配的字符串，其后为圆括号中各个匹配的子字符串。</p>
+<p><code>&quot;1 add 2 add 3&quot;.match(/\d/) //[&quot;1&quot;]</code><br><code>&quot;1 add 2 add 3&quot;.match(/\d/g) //[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]</code><br><code>&quot;https://yalishizhude.github.io/index.html&quot;.match(/(\w+)\:\/\/([\w.]+)\/(\S*)/); //[&quot;https://yalishizhude.github.io/index.html&quot;, &quot;https&quot;, &quot;yalishizhude.github.io&quot;, &quot;index.html&quot;]</code></p>
+<h2 id="split">split</h2><p>这是将字符串转化为数组的方法。一般用字符串做分隔符匹配，如果使用正则表达式，则在匹配字符串的前后方断开。同时注意以下几点：</p>
+<ul>
+<li>匹配到开头内容，返回数组第一个元素为空字符串。</li>
+<li>匹配到结尾内容，返回数组最后一个元素为空字符串。</li>
+<li>未匹配，返回数组只包含未切分的字符串。</li>
+</ul>
+<h2 id="replace">replace</h2><ul>
+<li>$n 匹配第n个匹配正则表达式中的圆括号子表达式文本</li>
+<li>$&amp; 匹配正则表达式的子串</li>
+<li>$` 匹配子串左边的文本</li>
+<li>$’ 匹配子串右边的文本</li>
+<li>$$ 匹配美元符号</li>
+</ul>
+<p><code>&quot;z d l&quot;.replace(/(\w)\s(\w)\s(\w)/, &#39;$3 $2 $1&#39;) // &quot;l d z&quot;</code></p>
+<h3 id="习题-2">习题</h3><p>中文双引号替换英文双引号</p>
+<h1 id="RegExp对象">RegExp对象</h1><h2 id="属性">属性</h2><ul>
+<li>source 正则表达式文本</li>
+<li>global 只读布尔值，是否有修饰符g</li>
+<li>ignoreCase 只读布尔值，是否有修饰符i</li>
+<li>multiline 只读布尔值，是否有修饰符m</li>
+<li>lastIndex 下一次检索开始的位置，用于exec()和test()<h2 id="方法">方法</h2><h3 id="exec()">exec()</h3>类似String.match，不过不能使用全局匹配。匹配同时修改lastIndex值为紧挨着匹配子串的字符位置，如果未匹配则为0。<h3 id="test()">test()</h3>返回布尔值，可以修改lastIndex从指定位置开始匹配。</li>
+</ul>
+<h1 id="总结">总结</h1><p>正则表达式学习起来就4个字：死去活来~原理并不复杂，概念理解清楚了，基础知识记清楚了，一般的表达式应该都能写了~</p>
+<p>习题答案和百度脑图下载地址：<a href="http://yalishizhude.github.io/subscribe/">http://yalishizhude.github.io/subscribe/</a></p>
+
+      
+      <hr>
+      <p>
+        博客：<a href="http://yalishizhude.github.io">http://yalishizhude.github.io</a><br>
+        作者：<a href="http://yalishizhude.github.io/about/">亚里士朱德</a>
+      </p>
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/"> #js </a>
+          
+            <a href="/tags/读书/"> #读书 </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/11/rhinoceros-function/">一起来啃犀牛书：你懂LOL，也可以懂函数</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/21/rhinoceros-bom/">一起来啃犀牛书：BOM</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/31/rhinoceros-reg/"
+     data-title="一起来啃犀牛书：正则表达式"
+     data-content=""
+     data-url="http://yalishizhude.github.io/2016/03/31/rhinoceros-reg/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2016/03/31/rhinoceros-reg/"
+               data-title="一起来啃犀牛书：正则表达式" data-url="http://yalishizhude.github.io/2016/03/31/rhinoceros-reg/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+          <!-- 多说热评文章-->
+          <p>热评文章</p>
+          <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="https://avatars0.githubusercontent.com/u/3870098?v=3&s=460" alt="亚里士朱德" />
+          <p class="site-author-name">亚里士朱德</p>
+        </div>
+        <p class="site-description motion-element">阅读，实践，学习，积累，分享</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/yalishizhude" target="_blank">github</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://yalishizhude.github.io" target="_blank">博客</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/arisjutle" target="_blank">微博</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.imooc.com/myclub/article/uid/1098050" target="_blank">慕课网</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.jobbole.com/members/yalishizhude" target="_blank">伯乐在线</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://geek.csdn.net/user/publishlist/yalishizhude" target="_blank">极客头条</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://toutiao.io/subjects/11510" target="_blank">开发者头条</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式定义"><span class="nav-number">1.</span> <span class="nav-text">正则表达式定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符"><span class="nav-number">1.1.</span> <span class="nav-text">转义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符类"><span class="nav-number">1.2.</span> <span class="nav-text">字符类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述方式：重复"><span class="nav-number">1.3.</span> <span class="nav-text">描述方式：重复</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#知识点"><span class="nav-number">1.3.1.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#习题"><span class="nav-number">1.3.2.</span> <span class="nav-text">习题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述方式：选择、分组和引用"><span class="nav-number">1.4.</span> <span class="nav-text">描述方式：选择、分组和引用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#习题-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">习题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锚"><span class="nav-number">1.5.</span> <span class="nav-text">锚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰符"><span class="nav-number">1.6.</span> <span class="nav-text">修饰符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串中的模式匹配"><span class="nav-number">2.</span> <span class="nav-text">字符串中的模式匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#search"><span class="nav-number">2.1.</span> <span class="nav-text">search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#match"><span class="nav-number">2.2.</span> <span class="nav-text">match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#split"><span class="nav-number">2.3.</span> <span class="nav-text">split</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#replace"><span class="nav-number">2.4.</span> <span class="nav-text">replace</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#习题-2"><span class="nav-number">2.4.1.</span> <span class="nav-text">习题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RegExp对象"><span class="nav-number">3.</span> <span class="nav-text">RegExp对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">3.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">3.2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#exec()"><span class="nav-number">3.2.1.</span> <span class="nav-text">exec()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#test()"><span class="nav-number">3.2.2.</span> <span class="nav-text">test()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+    <!-- google -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 内容1 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:600px"
+         data-ad-client="ca-pub-7203019032808513"
+         data-ad-slot="7541596384"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        我被看了 <span id="busuanzi_value_site_pv"></span> 次~您是第<span id="busuanzi_value_site_uv"></span>个小伙伴
+        <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan style='visibility:hidden;' id='cnzz_stat_icon_1255866986'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255866986%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+<div class="copyright">
+  
+  &copy; &nbsp;  2015 - 
+  2016
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">亚里士朱德</span>
+  <span class="with-love">&spades;</span>
+  <span class="author">yalishizhude@163.com</span>
+</div>
+
+<div class="powered-by" style="visibility:hidden;">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info" style="visibility:hidden;">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div> 
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yalishizhude"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+  
+
+
+  <!-- lazyload -->
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+      <script type="text/javascript">
+        jQuery(function() {
+            jQuery("#posts img").lazyload({
+              placeholder:"http://www.arao.me/loading.gif",
+                effect:"fadeIn"
+              });
+            });
+    </script>
+</body>
+</html>

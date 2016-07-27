@@ -1,0 +1,837 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="sogou_site_verification" content="WEhegz1Bts"/>
+<meta name="360-site-verification" content="ab30d6f9900b55bcfa635dbcf869b683" />
+
+  <meta name="google-site-verification" content="V9_Ys0xWOwD0m2gXTYo15k9tyfvl16H4YE5ijFHyo50" />
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="阅读，实践，学习，积累，分享" />
+
+
+
+  <meta name="keywords" content="mean,node.js," />
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="亚里士朱德的博客" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'always'
+  };
+</script>
+
+
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?ab4daa880e07842428ff185fb1edbd6d";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+  <title> 【译】基于MEAN的全栈开发实例教程4：实现新增功能 // 亚里士朱德的博客 </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">亚里士朱德的博客</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-subscribe">
+          <a href="/subscribe">
+            <i class="menu-item-icon icon-subscribe"></i> <br />
+            订阅博客
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html">
+            <i class="menu-item-icon icon-commonweal"></i> <br />
+            公益404
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              【译】基于MEAN的全栈开发实例教程4：实现新增功能
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-11-19
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/node-js/">node.js</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/11/19/mean-4/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/19/mean-4/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <blockquote>
+<p>原文地址 <a href="https://blog.udemy.com/node-js-tutorial" target="_blank" rel="external">https://blog.udemy.com/node-js-tutorial</a><br>感谢来自Udemy的Samantha来信分享</p>
+</blockquote>
+<h1 id="添加一个新视频">添加一个新视频</h1><p>在这一部分中，你将学习更多关于在Express中创建API端点，利用Angular构建表单，用Monk在Mongo中存储文档。</p>
+<p>类似于上一节，我们将在随后几步中将从前端到后端实现这一功能。首先，我们将创建一个添加视频的API。我们将使用Express路由创建此端点并用Monk存储视频文件在Mongo中。然后，我们将创建一个新的页面来添加一个视频并用Angular来构建这个页面。</p>
+<p>让我们开始吧。</p>
+<a id="more"></a>
+<h2 id="第1步：创建1个API端点">第1步：创建1个API端点</h2><p>打开 <strong>routes&gt;videos.js</strong> 然后在文件后面和 <strong>module.exports</strong> 前面新增路由（记住，module.exports 应该是模块中的最后一行）：</p>
+<pre><code>router.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span><span class="params">(req, res)</span></span>{
+    <span class="keyword">var</span> collection = db.<span class="keyword">get</span>(<span class="string">'videos'</span>);
+    collection.insert({
+        title: req.body.title,
+        description: req.body.description
+    }, <span class="function"><span class="keyword">function</span><span class="params">(err, video)</span></span>{
+        <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;
+        res.json(video);
+    });
+});
+</code></pre><p>这些代码和之前有些类似。让我回顾一下重要的部分。首先，注意router.post方法的用法。在最后一节，我们使用router.get方法来处理一个HTTP GET请求。这里，我们使用REST约定中用来创建对象的 HTTP POST请求。</p>
+<p>在路由处理器中，首先我们获得了一个 <strong>videos</strong> 集合的引用，然后使用 <strong>insert</strong>方法在Mongo中添加一个新的文档。</p>
+<p>这个方法的第1个参数是一个JSON对象，它有两个属性： <strong>title</strong> 和 <strong>description</strong>。我们用 <strong>req.body</strong> 从这些属性中读取值。它代表数据将被提交到请求的body中。</p>
+<p>最后，在回调方法中新增一个文档，如果我们没有获取任何错误，我们使用response（res）的 <strong>json</strong> 方法来返回一个新增的用JSON表示的视频文档。</p>
+<h2 id="第2步：创建一个表单">第2步：创建一个表单</h2><p>现在API已经准备好了。我们需要一个表单来新增一个视频。</p>
+<p>在 <strong>public &gt; partials</strong> 目录下创建一个新的视图 <strong>video-form.html</strong> 。在文件中输入以下代码：</p>
+<pre><code><span class="tag">&lt;<span class="title">h1</span>&gt;</span>Add a Video<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+<span class="tag">&lt;<span class="title">form</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">label</span>&gt;</span>Title<span class="tag">&lt;/<span class="title">label</span>&gt;</span>        
+        <span class="tag">&lt;<span class="title">input</span>&gt;</span><span class="tag">&lt;/<span class="title">input</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">label</span>&gt;</span>Description<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">textarea</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"Save"</span>&gt;</span><span class="tag">&lt;/<span class="title">input</span>&gt;</span>  
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+</code></pre><p>现在当用户跳转到 <strong>/add-video</strong> 时我们需要告诉Angular来展示这个视图。所以需要一个新的路由。</p>
+<p>打开 <strong>vidzy.js</strong> 并且更新路由配置如下：</p>
+<pre><code>app.config([<span class="string">'$routeProvider'</span>, <span class="keyword">function</span>(<span class="variable">$routeProvider</span>){
+    <span class="variable">$routeProvider</span>
+        .when(<span class="string">'/'</span>, {
+            templateUrl: <span class="string">'partials/home.html'</span>,
+            controller: <span class="string">'HomeCtrl'</span>
+        })
+        .when(<span class="string">'/add-video'</span>, {
+            templateUrl: <span class="string">'partials/video-form.html'</span>
+        })
+        .otherwise({
+            redirectTo: <span class="string">'/'</span>
+        });
+}]);
+</code></pre><p>注意这里我们还没有配置controller，因为我们还没有写controller，我们在下一步中设置。</p>
+<p>视图和路由已经准备好了。最后，我们添加一个链接 <strong>/add-video</strong> 在首页中。打开 <strong>partials&gt;home.html</strong> 在 <strong>UL</strong> 标签前面添加1个新的链接：</p>
+<pre><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/#/add-video"</span>&gt;</span>Add a Video<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+</code></pre><p>注意在Angular应用中需要在链接前添加 <strong>/#</strong>。这是为了兼容老的不支持单页应用的浏览器。</p>
+<p>让我们预览一下目前为止我们开发的页面。回到浏览器并刷新首页。你将看到添加一个视频的链接。点击链接可以看到添加视频的页面。</p>
+<p>不得不说这个表单看起来真的很丑并且和真正应用的表单看起来差别很大。让我们给它一个漂亮、现代化的外观。</p>
+<h2 id="第3步：添加Bootstrap">第3步：添加Bootstrap</h2><p>我们将使用Bootstrap来为表单添加一些样式。如果你不熟悉Bootstrap，简单解释一下，它是一个用来构建现代和响应式web应用的前端CSS框架。在这个步骤中，我们将引用Bootstrap CSS文件，通过Bootstrap类来装饰我们的表单元素。</p>
+<p>打开 <strong>views &gt; layout.jade</strong></p>
+<p>在 <strong>head</strong> 标签的最后一行添加</p>
+<pre><code>link<span class="list">(<span class="keyword">rel=</span><span class="quoted">'stylesheet</span>', href=<span class="quoted">'https</span><span class="keyword">://maxcdn</span>.bootstrapcdn.com/bootstrap/3.<span class="number">3.5</span>/css/bootstrap.min.css')</span>
+</code></pre><p>确认它和上一行有同样的缩进空格数</p>
+<p>现在回到 <strong>partials &gt; video-form.html</strong>。添加下面的类到HTML元素：</p>
+<pre><code><span class="tag">&lt;<span class="title">h1</span>&gt;</span>Add a Video<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">form</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"form-group"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">label</span>&gt;</span>Title<span class="tag">&lt;/<span class="title">label</span>&gt;</span>        
+        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">class</span>=<span class="value">"form-control"</span>&gt;</span><span class="tag">&lt;/<span class="title">input</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"form-group"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">label</span>&gt;</span>Description<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">class</span>=<span class="value">"form-control"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">class</span>=<span class="value">"btn btn-primary"</span> <span class="attribute">value</span>=<span class="value">"Save"</span>&gt;</span><span class="tag">&lt;/<span class="title">input</span>&gt;</span>  
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+</code></pre><p>这些都是标准的Bootstrap用来创建表单的类。更多关于怎样用Bootstrap创建现代表单的例子，请查看<a href="http://getbootstrap.com/" target="_blank" rel="external">Bootstrap 文档</a></p>
+<p>回到浏览器并刷新页面。</p>
+<img src="/2015/11/19/mean-4/add.png" alt="add.png" title="">
+<p>现在看起来好多了。</p>
+<p>这个表单还没有行为。如果你点击保存按钮的话什么也不会发生，这就是我们下一步将要添加的功能。</p>
+<h2 id="第4步：实现控制器">第4步：实现控制器</h2><p>正如我之前所说，在MVC框架中，一个控制器主要处理视图中的事件。我们将创建一个Angular控制器来处理保存按钮的点击事件。</p>
+<p>打开 <strong>vidzy.js</strong> 并在文件末尾输入下列代码</p>
+<pre><code>app.controller(<span class="string">'AddVideoCtrl'</span>, [<span class="string">'$scope'</span>, <span class="string">'$resource'</span>, <span class="string">'$location'</span>,
+    <span class="keyword">function</span>(<span class="variable">$scope</span>, <span class="variable">$resource</span>, <span class="variable">$location</span>){
+        <span class="variable">$scope</span>.save = function(){
+            var Videos = <span class="variable">$resource</span>(<span class="string">'/api/videos'</span>);
+            Videos.save(<span class="variable">$scope</span>.video, function(){
+                <span class="variable">$location</span>.path(<span class="string">'/'</span>);
+            });
+        };
+    }]);
+</code></pre><p>这个控制器有3个依赖：<strong>$scope</strong>是控制器和视图之间的胶水，<strong>$resource</strong>用来调用RESTful API，<strong>$location</strong>用来改变浏览器地址栏的URL。所有这些已经在Angular服务中构建。</p>
+<p>在控制器中，我们在 <strong>$scope</strong> 上定义 <strong>save</strong> 方法。这个方法将在用户点击保存按钮时被调用。稍后将它挂载在视图上，先来看看方法中的逻辑。</p>
+<p>首先，我们调用 <strong>$resource</strong> 方法来传递API中的地址（<strong>/api/videos</strong>），返回一个对象来与API交互。在最后一节中，我们使用 <strong>query</strong> 方法来获取所有的视频。这里，我们使用 <strong>save</strong> 方法来提交一个视频给API。</p>
+<p><strong>videos.save</strong> 方法需要两个参数：用来提交的对象和回调函数（当异步调用执行完成时调用）。在回调函数中，我们使用 <strong>$location</strong> 服务来修改浏览器地址到网站的根路径。Angular知道根URL是绑定到home视图的。它将展示home页面给用户。</p>
+<p>打开 <strong>partials &gt; videos-form.html</strong> 如下修改input域</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"form-group"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span>&gt;</span>Title<span class="tag">&lt;/<span class="title">label</span>&gt;</span>        
+    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">class</span>=<span class="value">"form-control"</span> <span class="attribute">ng-model</span>=<span class="value">"video.title"</span>&gt;</span><span class="tag">&lt;/<span class="title">input</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"form-group"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span>&gt;</span>Description<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">class</span>=<span class="value">"form-control"</span> <span class="attribute">ng-model</span>=<span class="value">"video.description"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p><strong>ng-model</strong>属性是另一个用来绑定数据的指令。通过它，我们告诉Angular如果用户点击这个按钮，它将自动更新引用$scope的属性。在第一个例子中，当文本框的值改变时，Angular将自动修改 <strong>$scope.video.title</strong>。</p>
+<p>接下来修改按钮的声明如下：</p>
+<pre><code>&lt;input <span class="class"><span class="keyword">type</span>=</span><span class="string">"button"</span> <span class="class"><span class="keyword">class</span>=</span><span class="string">"btn btn-primary"</span> value=<span class="string">"Save"</span> ng-click=<span class="string">"save()"</span>&gt;&lt;/input&gt;
+</code></pre><p><strong>ng-click</strong>属性也是Angular的另一个用来处理HTML元素点击事件的指令。通过这个指令，我们告诉Angular如果用户点击这个按钮，它将执行 <strong>$scope</strong>上的 <strong>save</strong>方法。</p>
+<p>最后在路由中注册一个新的控制器</p>
+<pre><code><span class="class">.when</span>(<span class="string">'/add-video'</span>, {
+        <span class="attribute">templateUrl</span>: <span class="string">'partials/video-form.html'</span>,
+        <span class="attribute">controller</span>: <span class="string">'AddVideoCtrl'</span>
+    })
+</code></pre><p>现在已经完成了，测试一下这个应用。回到浏览器，填写并提交表单。你将在列表中看到一个新的视频。</p>
+<p>快速总结一下这一节中学到的知识。我们用Express创建了一个新的API端点然后使用Monk来存储一个视频文档到Mongo。然后，我们创建了一个Angular视图并通过表单添加一个视频。我们通过使用Bootstrap来美化了表单。最后，我们创建控制器来处理视图中的点击事件。在处理点击事件中，我们使用 <strong>$resource</strong>服务来提交数据给服务端。</p>
+<p>在下一节中，我们将添加一个编辑功能。</p>
+<p><em>如果觉得阅读这篇文章有收获，不妨点个赞吧^_^</em></p>
+
+      
+      <hr>
+      <p>
+        博客：<a href="http://yalishizhude.github.io">http://yalishizhude.github.io</a><br>
+        作者：<a href="http://yalishizhude.github.io/about/">亚里士朱德</a>
+      </p>
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mean/"> #mean </a>
+          
+            <a href="/tags/node-js/"> #node.js </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/28/try-hard/">满满的正能量——《你只是看起来很努力》读书笔记</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/17/shake-nearby/">那么多“扫一扫”，不妨“摇一摇”——微信“摇一摇周边”功能开发实录</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/11/19/mean-4/"
+     data-title="【译】基于MEAN的全栈开发实例教程4：实现新增功能"
+     data-content=""
+     data-url="http://yalishizhude.github.io/2015/11/19/mean-4/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2015/11/19/mean-4/"
+               data-title="【译】基于MEAN的全栈开发实例教程4：实现新增功能" data-url="http://yalishizhude.github.io/2015/11/19/mean-4/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+          <!-- 多说热评文章-->
+          <p>热评文章</p>
+          <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="https://avatars0.githubusercontent.com/u/3870098?v=3&s=460" alt="亚里士朱德" />
+          <p class="site-author-name">亚里士朱德</p>
+        </div>
+        <p class="site-description motion-element">阅读，实践，学习，积累，分享</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/yalishizhude" target="_blank">github</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://yalishizhude.github.io" target="_blank">博客</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/arisjutle" target="_blank">微博</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.imooc.com/myclub/article/uid/1098050" target="_blank">慕课网</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.jobbole.com/members/yalishizhude" target="_blank">伯乐在线</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://geek.csdn.net/user/publishlist/yalishizhude" target="_blank">极客头条</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://toutiao.io/subjects/11510" target="_blank">开发者头条</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#添加一个新视频"><span class="nav-number">1.</span> <span class="nav-text">添加一个新视频</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第1步：创建1个API端点"><span class="nav-number">1.1.</span> <span class="nav-text">第1步：创建1个API端点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第2步：创建一个表单"><span class="nav-number">1.2.</span> <span class="nav-text">第2步：创建一个表单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第3步：添加Bootstrap"><span class="nav-number">1.3.</span> <span class="nav-text">第3步：添加Bootstrap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第4步：实现控制器"><span class="nav-number">1.4.</span> <span class="nav-text">第4步：实现控制器</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+    <!-- google -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 内容1 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:600px"
+         data-ad-client="ca-pub-7203019032808513"
+         data-ad-slot="7541596384"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        我被看了 <span id="busuanzi_value_site_pv"></span> 次~您是第<span id="busuanzi_value_site_uv"></span>个小伙伴
+        <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan style='visibility:hidden;' id='cnzz_stat_icon_1255866986'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255866986%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+<div class="copyright">
+  
+  &copy; &nbsp;  2015 - 
+  2016
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">亚里士朱德</span>
+  <span class="with-love">&spades;</span>
+  <span class="author">yalishizhude@163.com</span>
+</div>
+
+<div class="powered-by" style="visibility:hidden;">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info" style="visibility:hidden;">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div> 
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yalishizhude"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+  
+
+
+  <!-- lazyload -->
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+      <script type="text/javascript">
+        jQuery(function() {
+            jQuery("#posts img").lazyload({
+              placeholder:"http://www.arao.me/loading.gif",
+                effect:"fadeIn"
+              });
+            });
+    </script>
+</body>
+</html>

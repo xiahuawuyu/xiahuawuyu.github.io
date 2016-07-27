@@ -1,0 +1,793 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="sogou_site_verification" content="WEhegz1Bts"/>
+<meta name="360-site-verification" content="ab30d6f9900b55bcfa635dbcf869b683" />
+
+  <meta name="google-site-verification" content="V9_Ys0xWOwD0m2gXTYo15k9tyfvl16H4YE5ijFHyo50" />
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="阅读，实践，学习，积累，分享" />
+
+
+
+  <meta name="keywords" content="mean,node.js," />
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="亚里士朱德的博客" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'always'
+  };
+</script>
+
+
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?ab4daa880e07842428ff185fb1edbd6d";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+  <title> 【译】基于MEAN的全栈开发实例教程2：搭建开发环境 // 亚里士朱德的博客 </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">亚里士朱德的博客</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-subscribe">
+          <a href="/subscribe">
+            <i class="menu-item-icon icon-subscribe"></i> <br />
+            订阅博客
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html">
+            <i class="menu-item-icon icon-commonweal"></i> <br />
+            公益404
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              【译】基于MEAN的全栈开发实例教程2：搭建开发环境
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-10-17
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/node-js/">node.js</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/10/17/mean-2/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/17/mean-2/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <blockquote>
+<p>原文地址 <a href="https://blog.udemy.com/node-js-tutorial" target="_blank" rel="external">https://blog.udemy.com/node-js-tutorial</a><br>感谢来自Udemy的Samantha来信分享</p>
+</blockquote>
+<p>最近有些忙，更新可能不及时，如有兴趣希望大家去看原文网站。</p>
+<a id="more"></a>
+<h1 id="搭建开发环境">搭建开发环境</h1><p>在我们开始之前，为了开发MEAN应用你需要提前安装一些开发工具。安装这些工具需要15-20分钟。安装完成后，你就有了一个对于MEAN应用的开发环境，并且今后不需要再次安装。<br>所以请先安装我列举的这些工具。如果你已经安装了其中某些工具的话，可以跳过相关部分。</p>
+<h2 id="安装Sublime_Text">安装Sublime Text</h2><p>Sublime Text 是一个轻量级而且功能强大的代码编辑器。你可以使用任何编辑器来构建node应用，但是如果你之前没有使用过sublime的话，我建议你尝试一下sublime。你可以在<a href="http://sublimetext.com网站上进行下载。" target="_blank" rel="external">http://sublimetext.com网站上进行下载。</a></p>
+<h2 id="安装Mongo">安装Mongo</h2><p>登陆<a href="http://mongodb.org" target="_blank" rel="external">http://mongodb.org</a> 然后点击 <strong>Download MongoDB</strong>。按照官网上提供的文档进行安装。安装过程很简单，不像SQL Server那样需要半个多小时，只需要一两分钟即可。<br>安装完Mongo，你需要按照下面的操作来运行它。你需要创建一个目录用来存储Mongo的数据库文件。这个目录对于当前用于必须有写权限。然后你需要启动MongoD(Mongo Daemon)，这是一个用来处理数据请求的后台进程。<br>默认情况下，MongoD将会把数据存储在系统盘的 <strong>/data/db</strong>目录下(如果提示错误不存在，请自行创建)。在本教程中我建议你保持默认设置。如果你希望修改这个路径，请参考官网上的指令进行修改。<br>接下来让我们在默认配置下启动Mongo<br><strong>对于windows用户</strong><br>用管理员权限打开命令行窗口</p>
+<pre><code>&gt; md <span class="command">\data</span><span class="command">\db</span>
+&gt; cd “C:<span class="command">\Program</span> Files<span class="command">\MongoDB</span><span class="command">\Server</span>\3.0<span class="command">\bin</span>” (你的MongoDB安装目录)
+&gt; mongod
+</code></pre><p>注意你可以将MongoD设置为windows服务，这样的话你就不用每次从命令行来启动了。具体设置方法可以参考MongDB的官网。<br>然后你可以看到一个弹出窗口，显示 MongoD listening for network connections. Give access to MongoD.<br><strong>对于Mac用户</strong><br>打开终端</p>
+<pre><code><span class="variable">$ </span>sudo mkdir -p /data/db
+<span class="variable">$ </span>whoami
+moshfeghhamedani
+<span class="variable">$ </span>sudo chown moshfeghhamedani /data/db
+<span class="variable">$ </span>mongod
+</code></pre><p>你将看见MongoD在命令行弹出窗口或者终端中执行正在等待连接。<br><img src="/2015/10/17/mean-2/mongod.png" alt="mongod.png" title=""><br>如果你在启动MongoD时发现了任何问题，最好查看MongoDB的官网然后进行完整安装。</p>
+<h2 id="安装Node">安装Node</h2><p>登陆<a href="https://nodejs.org并且点击安装。不管是使用的是windows还是Mac，它将提供合适的装程序。" target="_blank" rel="external">https://nodejs.org并且点击安装。不管是使用的是windows还是Mac，它将提供合适的装程序。</a></p>
+<p>安装Node的时候会自动安装NPM（Node Package Manager）。NPM对于Node来说有点像Ruby Gems对于Ruby和NuGet对于.NET。我们通过NPM来下载和安装开源可复用的包/模块到应用中。</p>
+<h2 id="安装Express_Generator">安装Express Generator</h2><p>Express Generator是一个用来搭建应用的Node模块。为了安装Express Generator，我们需要打开另一个Mac的终端或者windows的命令提示窗口，<br>然后执行：</p>
+<pre><code>npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> express-generator</span>
+</code></pre><p><code>-g</code>参数代表全局安装。</p>
+<h2 id="搭建一个项目">搭建一个项目</h2><p>所有的工具都已经安装完毕。现在让我用Express Generator搭建一个框架。我们将开发一个适用于录像租赁店的叫Vidzy的应用。打开终端窗口，选择一个合适的目录来创建项目：</p>
+<pre><code><span class="title">express</span> Vidzy
+</code></pre><p>Express Generator 将在Vidzy目录下搭建一个应用。<br>现在在你喜欢的代码编辑器中打开Vidzy文件夹。如果你使用的是Sublime，你可以把这个文件夹拖入Sublime。<br>下面是目录结构</p>
+<pre><code>bin
+    www
+public
+    images
+    javascripts
+    stylesheets
+routes
+    index<span class="class">.js</span>
+    users<span class="class">.js</span>
+views
+    error<span class="class">.jade</span>
+    index<span class="class">.jade</span>
+    layout<span class="class">.jade</span>
+app<span class="class">.js</span>
+    package.son
+</code></pre><p><strong>public</strong> 我们将存储一些公共资源到这个目录下，例如javascript文件、样式文件、图片等。<br><strong>routes</strong> 包括一系列的javascript文件，每一个文件都为该应用的给定模块定义了一些路由以及业务逻辑。<br><strong>views</strong> 包括了应用中的视图文件。Express支持很多常见的模板引擎例如：Jade，Haml，EJS，Handlebars等。Jade是默认的模板引擎。<br><strong>app.js</strong>程序的主入口。包括一些程序配置和声明。<br><strong>package.json</strong>每个Node应用都有一个这样的文件。这个文件用来描述当前应用的信息和依赖的插件。<br>我们打开pakcage.json，可能看到如下信息：</p>
+<pre><code>{
+  "<span class="attribute">name</span>": <span class="value"><span class="string">"Vidzy"</span></span>,
+  "<span class="attribute">version</span>": <span class="value"><span class="string">"0.0.0"</span></span>,
+  "<span class="attribute">private</span>": <span class="value"><span class="literal">true</span></span>,
+  "<span class="attribute">scripts</span>": <span class="value">{
+    "<span class="attribute">start</span>": <span class="value"><span class="string">"node ./bin/www"</span>
+  </span>}</span>,
+  "<span class="attribute">dependencies</span>": <span class="value">{
+    "<span class="attribute">body-parser</span>": <span class="value"><span class="string">"~1.13.2"</span></span>,
+    "<span class="attribute">cookie-parser</span>": <span class="value"><span class="string">"~1.3.5"</span></span>,
+    "<span class="attribute">debug</span>": <span class="value"><span class="string">"~2.2.0"</span></span>,
+    "<span class="attribute">express</span>": <span class="value"><span class="string">"~4.13.1"</span></span>,
+    "<span class="attribute">jade</span>": <span class="value"><span class="string">"~1.11.0"</span></span>,
+    "<span class="attribute">morgan</span>": <span class="value"><span class="string">"~1.6.1"</span></span>,
+    "<span class="attribute">serve-favicon</span>": <span class="value"><span class="string">"~2.3.0"</span>
+  </span>}
+</span>}
+</code></pre><p>在文件中，我们定义了程序的名称和版本以及依赖模块。所有这些依赖模块都是用Node编写的模块。</p>
+<h2 id="安装依赖模块">安装依赖模块</h2><p>当你通过Express Generator生成一个应用时，这些依赖模块并没有被安装。它们只是在package.json文件中进行了配置。你需要单独安装这些依赖。<br>来安装这些依赖，首先返回到控制台并且输入命令：</p>
+<pre><code><span class="built_in">cd</span> Vidzy
+npm install
+</code></pre><p>安装需要花费一些时间。NPM将参照 <strong>package.json</strong> 文件中定义的依赖。然后它将从NPM仓库中下载这些依赖到一个叫做 <strong>node_modules</strong> 的目录中。让我们看看这些模块吧。<br>在 <strong>Vidzy</strong> 文件夹中，进入 <strong>node_modules/express</strong>，注意这个目录下有另一个 <strong>package.json</strong>用来定义Express.js的依赖模块。所以，这里也有另一个 <strong>node_modules</strong>目录来存储依赖模块。这就是一个Node应用的常见目录结构。每一个模块都有一个 <strong>package.json</strong>文件和一个 <strong>node_modules</strong> 文件夹。</p>
+<h2 id="安装Nodemon">安装Nodemon</h2><p>当你启动Node应用的时候，一个用来接收请求的最基本的web服务器就在3000端口上启动了。如果你修改了代码，这些改变将不会生效直到你重启了服务器。频繁的重启服务器来使代码生效是一件蛋疼的事情。为了解决这个问题，我们使用 <strong>Nodemon</strong>，这个模块在检测到源文件修改时自动重启web服务器。<br>安装Nodemon：</p>
+<pre><code>npm <span class="operator"><span class="keyword">install</span> nodemon -<span class="keyword">g</span></span>
+</code></pre><h2 id="安装Monk">安装Monk</h2><p>Monk是一个用来读写MongoDB的Node模块。<br>安装monk：</p>
+<pre><code>npm <span class="operator"><span class="keyword">install</span> monk <span class="comment">--save</span></span>
+</code></pre><p><code>--save</code>参数告诉NPM将这个依赖加入到package.json文件中。这样做的好处就是你将代码提交到版本库，别人将代码签出，所有的依赖模块都可以从就package.json中读取出来。（也就是说我们不需要保存这些第三方模块，任何时候我们搭建项目只需要读取这个package.json文件即可安装，减少了项目的维护代码）。然后只需要简单的执行 <strong>npm install</strong>，然后自动安装这些引用模块。这就是我们搭建应用框架的时候需要做的事情。</p>
+<h2 id="运行应用">运行应用</h2><p>太棒了！我们已经安装了所有需要的工具。现在是时候来运行应用了。从控制台进入Vidzy目录输入以下命令：</p>
+<pre><code>nodemon
+</code></pre><p>Nodemon将在3000端口上启动你的web服务器。你可能会看到一个弹出窗口显示Node正在侦听连接。<br>现在启动你的浏览器跳转到</p>
+<p><a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a></p>
+<p>这就是你的第一个express应用。</p>
+<img src="/2015/10/17/mean-2/express.png" alt="express.png" title="">
+<p>接下来的几个章节，我们将为这个录像租赁店应用开发各种功能。</p>
+
+      
+      <hr>
+      <p>
+        博客：<a href="http://yalishizhude.github.io">http://yalishizhude.github.io</a><br>
+        作者：<a href="http://yalishizhude.github.io/about/">亚里士朱德</a>
+      </p>
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mean/"> #mean </a>
+          
+            <a href="/tags/node-js/"> #node.js </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/20/sublime/">高端唯有定制，把sublime打造成专属的IDE</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/17/underscore-source-3/">js高手进阶之路：underscore源码经典（三）</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/10/17/mean-2/"
+     data-title="【译】基于MEAN的全栈开发实例教程2：搭建开发环境"
+     data-content=""
+     data-url="http://yalishizhude.github.io/2015/10/17/mean-2/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2015/10/17/mean-2/"
+               data-title="【译】基于MEAN的全栈开发实例教程2：搭建开发环境" data-url="http://yalishizhude.github.io/2015/10/17/mean-2/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+          <!-- 多说热评文章-->
+          <p>热评文章</p>
+          <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="https://avatars0.githubusercontent.com/u/3870098?v=3&s=460" alt="亚里士朱德" />
+          <p class="site-author-name">亚里士朱德</p>
+        </div>
+        <p class="site-description motion-element">阅读，实践，学习，积累，分享</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/yalishizhude" target="_blank">github</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://yalishizhude.github.io" target="_blank">博客</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/arisjutle" target="_blank">微博</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.imooc.com/myclub/article/uid/1098050" target="_blank">慕课网</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.jobbole.com/members/yalishizhude" target="_blank">伯乐在线</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://geek.csdn.net/user/publishlist/yalishizhude" target="_blank">极客头条</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://toutiao.io/subjects/11510" target="_blank">开发者头条</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建开发环境"><span class="nav-number">1.</span> <span class="nav-text">搭建开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Sublime_Text"><span class="nav-number">1.1.</span> <span class="nav-text">安装Sublime Text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Mongo"><span class="nav-number">1.2.</span> <span class="nav-text">安装Mongo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Node"><span class="nav-number">1.3.</span> <span class="nav-text">安装Node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Express_Generator"><span class="nav-number">1.4.</span> <span class="nav-text">安装Express Generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建一个项目"><span class="nav-number">1.5.</span> <span class="nav-text">搭建一个项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装依赖模块"><span class="nav-number">1.6.</span> <span class="nav-text">安装依赖模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Nodemon"><span class="nav-number">1.7.</span> <span class="nav-text">安装Nodemon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Monk"><span class="nav-number">1.8.</span> <span class="nav-text">安装Monk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行应用"><span class="nav-number">1.9.</span> <span class="nav-text">运行应用</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+    <!-- google -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 内容1 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:600px"
+         data-ad-client="ca-pub-7203019032808513"
+         data-ad-slot="7541596384"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        我被看了 <span id="busuanzi_value_site_pv"></span> 次~您是第<span id="busuanzi_value_site_uv"></span>个小伙伴
+        <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan style='visibility:hidden;' id='cnzz_stat_icon_1255866986'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255866986%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+<div class="copyright">
+  
+  &copy; &nbsp;  2015 - 
+  2016
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">亚里士朱德</span>
+  <span class="with-love">&spades;</span>
+  <span class="author">yalishizhude@163.com</span>
+</div>
+
+<div class="powered-by" style="visibility:hidden;">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info" style="visibility:hidden;">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div> 
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yalishizhude"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+  
+
+
+  <!-- lazyload -->
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+      <script type="text/javascript">
+        jQuery(function() {
+            jQuery("#posts img").lazyload({
+              placeholder:"http://www.arao.me/loading.gif",
+                effect:"fadeIn"
+              });
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,853 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="sogou_site_verification" content="WEhegz1Bts"/>
+<meta name="360-site-verification" content="ab30d6f9900b55bcfa635dbcf869b683" />
+
+  <meta name="google-site-verification" content="V9_Ys0xWOwD0m2gXTYo15k9tyfvl16H4YE5ijFHyo50" />
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="阅读，实践，学习，积累，分享" />
+
+
+
+  <meta name="keywords" content="html," />
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="亚里士朱德的博客" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'always'
+  };
+</script>
+
+
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?ab4daa880e07842428ff185fb1edbd6d";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+  <title> handlebars玩家指南 // 亚里士朱德的博客 </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">亚里士朱德的博客</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-subscribe">
+          <a href="/subscribe">
+            <i class="menu-item-icon icon-subscribe"></i> <br />
+            订阅博客
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html">
+            <i class="menu-item-icon icon-commonweal"></i> <br />
+            公益404
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              handlebars玩家指南
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2016-01-22
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/html/">html</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2016/01/22/handlebars/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/22/handlebars/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <img src="/2016/01/22/handlebars/handlebars.png" alt="handlebars.png" title="">
+<blockquote>
+<p>提示：文中 “{ {” 、“} }”，在实际使用中用双花括号，中间无空格。</p>
+</blockquote>
+<p>写这篇文章也是因为当初我为了实现一个模板分页的某个功能（这个问题以及解决方法最后说），花了不少时间将官网看了几遍，试验了很久之后依然没有成功，然后凭着一股崛起继续钻研终于解决了这个问题。此时发现handlebars的东西基本上也了解得差不多了，所以干脆抽时间写篇文章整理一下。<br><a id="more"></a></p>
+<h1 id="为什么需要模板引擎">为什么需要模板引擎</h1><p>关于前端的模板引擎，我用一个公式来解释</p>
+<pre><code>            模板引擎
+模板 + 数据 =======<span class="function">=&gt;</span> html页面
+</code></pre><p>模板引擎就像是html的解析生成器，将对应的模板填充完数据之后生成静态的html页面。它可以在浏览器端（比如angular中指令所用的模板）也可以在服务器端执行，不过一般用于服务器端。因为它的一个作用是抽象公共页面来重用，如果在服务端填充数据，可以减少回填数据给页面的ajax请求，从而提升浏览器端整体页面渲染速度。</p>
+<h1 id="那些年我用过的模板引擎">那些年我用过的模板引擎</h1><p>接触过的模板引擎不算多，最早应该是jsp，本质上也是一种模板引擎，再到功能稍微强大的freemarker，这两种都是属于java语系的。js语系的jade和ejs我都有所接触，不过不常用，jade那种类python的语法规则以及较低的解析效率都让我不敢兴趣，Express框架也只是早起将其作为模板引擎。后来换成了强大的ejs，无论是功能还是写法上都接近jsp了。直到最新的Express4发布，默认改为了弱逻辑的比较简洁的模板引擎handlebars。</p>
+<p>我使用handlebars有以下几个原因：</p>
+<ul>
+<li>这次新项目前端框架搭建基于Express4，模板引擎只能在ejs/jade/hogan/hbs中选择一个。</li>
+<li>默认是handlebars，虽不知道原因，想必有其原因。</li>
+<li>看过“去哪儿”的前端技术分享，他们就是在handlebars上进行封装的，证明已经有人填过坑了，可以一试。</li>
+<li>开始比较看好ejs，但是官网文档被强了，相比之下handlebars的文档比较清晰，还有实例，虽然逻辑结构比较混乱，但是基本无障碍。</li>
+</ul>
+<h1 id="码解handlebars">码解handlebars</h1><p>运行环境：Express4、hbs4<br>未接触Express或hbs的可以先看<a href="http://www.expressjs.com.cn/4x/api.html#res.render" target="_blank" rel="external">这里</a></p>
+<h2 id="初级玩家：表达式">初级玩家：表达式</h2><p>数据：</p>
+<pre><code>{
+    title: <span class="string">'Express'</span>,
+    obj:{
+        version: <span class="string">'v4.3'</span>,
+        category: <span class="string">'node'</span>,
+        <span class="string">"date~"</span>: <span class="string">'2016'</span>
+    }
+}
+</code></pre><p>模板：</p>
+<pre><code><span class="xml"><span class="tag">&lt;<span class="title">p</span>&gt;</span></span><span class="expression">{ {<span class="variable">title</span>}</span><span class="xml"> }<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;<span class="title">p</span>&gt;</span></span><span class="expression">{ {<span class="variable">obj.version</span>}</span><span class="xml"> }<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;<span class="title">p</span>&gt;</span></span><span class="expression">{ {<span class="variable">obj</span><span class="end-block">/category</span>}</span><span class="xml"> }<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;<span class="title">p</span>&gt;</span></span><span class="expression">{ {<span class="variable">obj.date</span>~}</span><span class="xml"> }<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span>
+</code></pre><p>html页面：</p>
+<pre><code>Express
+v4<span class="number">.3</span>
+node
+</code></pre><p>handlebars中变量都添加双花括号来表示（类似Angular），对比ejs的”&lt;%%&gt;”来说看起来没什么区别，其实这是很人性化的，想一下你键盘上的位置，再考虑按这几个字符的难易程度你就懂了。<br>其中要访问变量的属性值时可以用类似json格式的”.”，也可以用”/“。</p>
+<p><em>其中变量名不可包含以下字符。如果包含则不被解析，如上的”“。</em></p>
+<pre><code>空格 ! <span class="string">" # % &amp; ' ( ) * + , . / ; &lt; = &gt; @ [ \ ] ^ ` { | } ~</span>
+</code></pre><p>但可以用 <strong>“</strong> , <strong>‘</strong> , <strong>[]</strong> 来转译这些特殊字符。</p>
+<p>这一条规则意味着 <strong>“&amp;&amp;”,”||”,”!”这类逻辑判断是不能出现在表达式中的！</strong> （看着这一条是不是觉得弱爆了，要不然怎么叫若逻辑模板引擎呢~哈哈，不过当然有另外的解决办法）。</p>
+<h2 id="中级玩家：helper">中级玩家：helper</h2><p>英语水平有限，实在找不到一个恰当的词来翻译它了。可以理解为它是注入到模板中的一个函数，用来接收参数并进行逻辑处理。</p>
+<h3 id="默认helper">默认helper</h3><h4 id="if_else">if else</h4><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123;#if author&#125; &#125;</span><br><span class="line">  &lt;h1&gt;&#123; &#123;firstName&#125; &#125; &#123; &#123;lastName&#125; &#125;&lt;/h1&gt;</span><br><span class="line">&#123; &#123;else&#125; &#125;</span><br><span class="line">  &lt;h1&gt;Unknown Author&lt;/h1&gt;</span><br><span class="line">&#123; &#123;/if&#125; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="expression">&#123; &#123;<span class="begin-block">#<span class="keyword">if</span> isActive</span>&#125;</span><span class="xml"> &#125;</span><br><span class="line">  <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"star.gif"</span> <span class="attribute">alt</span>=<span class="value">"Active"</span>&gt;</span></span><br><span class="line"></span><span class="expression">&#123; &#123;<span class="variable">else</span> <span class="variable"><span class="keyword">if</span></span> <span class="variable">isInactive</span>&#125;</span><span class="xml"> &#125;</span><br><span class="line">  <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"cry.gif"</span> <span class="attribute">alt</span>=<span class="value">"Inactive"</span>&gt;</span></span><br><span class="line"></span><span class="expression">&#123; &#123;<span class="end-block">/<span class="keyword">if</span></span>&#125;</span><span class="xml"> &#125;</span></span><br></pre></td></tr></table></figure>
+<p>和一般的编程语言的 <strong>if-else</strong> 代码块是差不多的，不过再次重申由于上面提到的特殊字符，所以if条件中是不能有逻辑表达式的，只能是变量或者值。</p>
+<h4 id="unless">unless</h4><p>还是因为上面提到的那些字符，handlebars不支持逻辑非(“!”)，所以又有了一个与if相反的helper</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123;<span class="comment">#unless license&#125; &#125;</span></span><br><span class="line">&lt;h3 <span class="type">class</span>=<span class="string">"warning"</span>&gt;WARNING: This entry <span class="keyword">does</span> <span class="keyword">not</span> have a license!&lt;/h3&gt;</span><br><span class="line">&#123; &#123;/unless&#125; &#125;</span><br></pre></td></tr></table></figure>
+<p>上面这段代码就等价于</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123;<span class="comment">#if license&#125; &#125;</span></span><br><span class="line">&#123; &#123;<span class="keyword">else</span>&#125; &#125;</span><br><span class="line">&lt;h3 <span class="type">class</span>=<span class="string">"warning"</span>&gt;WARNING: This entry <span class="keyword">does</span> <span class="keyword">not</span> have a license!&lt;/h3&gt;</span><br><span class="line">&#123; &#123;/<span class="keyword">if</span>&#125; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="each">each</h4><p>都知道each相当于for循环。不过有些地方需要注意：</p>
+<ul>
+<li>可以用相对路径的方式来获取上一层的上下文。（上下文概念跟js中的上下文差不多，比如在each passage代码块内，每一次循环上下文一次是passage[0],passage[1]…）</li>
+<li>一些默认变量，@first/@last 当该对象为数组中第一个/最后一个时返回真值。如果数组成员为值而非对象，@index表示当前索引值，可以用@key或者this获取当前值</li>
+<li>可以用 <code>as |xxx|</code>的形式给变量起别名，循环中通过别名可以引用父级变量值。当然也可以通过相对路径的方式引用父级变量。<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123;#each passage&#125; &#125;</span><br><span class="line">    &#123; &#123;#each paragraphs&#125; &#125;</span><br><span class="line">      &#123; &#123;@../index&#125; &#125;:&#123; &#123;@index&#125; &#125;:&#123; &#123;this&#125; &#125;&lt;/p&gt;</span><br><span class="line">    &#123; &#123;else&#125; &#125;</span><br><span class="line">      &lt;p class=<span class="string">"empty"</span>&gt;No content&lt;/p&gt;</span><br><span class="line">    &#123; &#123;/each&#125; &#125;</span><br><span class="line">&#123; &#123;/each&#125; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123;#each array as |value, key|&#125; &#125;</span><br><span class="line">  &#123; &#123;#each child as |childValue, childKey|&#125; &#125;</span><br><span class="line">    &#123; &#123;key&#125; &#125; - &#123; &#123;childKey&#125; &#125;. &#123; &#123;childValue&#125; &#125;</span><br><span class="line">  &#123; &#123;/each&#125; &#125;</span><br><span class="line">&#123; &#123;/each&#125; &#125;</span><br></pre></td></tr></table></figure>
+<p>同时也可以用来遍历对象，这时@key表示属性名,this表示对应的值</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123;#each object&#125; &#125;</span><br><span class="line">  &#123; &#123;@key&#125; &#125;: &#123; &#123;this&#125; &#125;</span><br><span class="line">&#123; &#123;/each&#125; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="with">with</h4><p>类似js中的with，可以配合分页使用，限定作用域。</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123;#with author as |myAuthor|&#125; &#125;</span><br><span class="line">  &lt;h2&gt;By &#123; &#123;myAuthor.firstName&#125; &#125; &#123; &#123;myAuthor.lastName&#125; &#125;&lt;/h2&gt;</span><br><span class="line">&#123; &#123;else&#125; &#125;</span><br><span class="line">  &lt;p class=<span class="string">"empty"</span>&gt;No content&lt;/p&gt;</span><br><span class="line">&#123; &#123;/with&#125; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="lookup">lookup</h4><p>这个用于以下这种并列数组的情况，可以按照索引来找兄弟变量对应的值。理解起来有些困难，直接看代码</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="label">    groups:</span> [</span><br><span class="line">        &#123;<span class="string">id:</span> <span class="number">1</span>, <span class="string">title:</span> <span class="string">"group1"</span>&#125;,</span><br><span class="line">        &#123;<span class="string">id:</span> <span class="number">2</span>, <span class="string">title:</span> <span class="string">"group2"</span>&#125;,</span><br><span class="line">    ],</span><br><span class="line"><span class="label">    users:</span> [</span><br><span class="line">        &#123;<span class="string">id:</span><span class="number">1</span>, <span class="string">login:</span> <span class="string">"user1"</span>, <span class="string">groupId:</span> <span class="number">1</span>&#125;,</span><br><span class="line">        &#123;<span class="string">id:</span><span class="number">2</span>, <span class="string">login:</span> <span class="string">"user2"</span>, <span class="string">groupId:</span> <span class="number">2</span>&#125;,</span><br><span class="line">        &#123;<span class="string">id:</span><span class="number">3</span>, <span class="string">login:</span> <span class="string">"user3"</span>, <span class="string">groupId:</span> <span class="number">1</span>&#125;</span><br><span class="line">    ],</span><br><span class="line"><span class="label">    infos:</span> [</span><br><span class="line">        <span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">table</span>&gt;</span></span><br><span class="line">    </span><span class="expression">&#123; &#123;<span class="begin-block">#each users</span>&#125;</span><span class="xml"> &#125;</span><br><span class="line">        <span class="tag">&lt;<span class="title">tr</span> <span class="attribute">data-id</span>=<span class="value">"</span></span></span><span class="expression">&#123; &#123;<span class="variable">id</span>&#125;</span><span class="xml"><span class="tag"><span class="value"> &#125;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">td</span>&gt;</span></span><span class="expression">&#123; &#123;<span class="variable">login</span>&#125;</span><span class="xml"> &#125;<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">td</span> <span class="attribute">data-id</span>=<span class="value">"</span></span></span><span class="expression">&#123; &#123;<span class="variable">groupId</span>&#125;</span><span class="xml"><span class="tag"><span class="value"> &#125;"</span>&gt;</span></span><span class="expression">&#123; &#123;<span class="variable">lookup</span> <span class="variable">..</span><span class="end-block">/infos </span>@<span class="variable">index</span>&#125;</span><span class="xml"> &#125;<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">    </span><span class="expression">&#123; &#123;<span class="end-block">/each</span>&#125;</span><span class="xml"> &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="title">table</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">user1   <span class="tag">a</span></span><br><span class="line">user2   <span class="tag">b</span></span><br><span class="line">user3   c</span><br></pre></td></tr></table></figure>
+<p>这里在users数组中按照索引值引用infos数组中对应的值，如果想引用groups中的groupId呢？很简单，用with。</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">table</span>&gt;</span></span><br><span class="line">    </span><span class="expression">&#123; &#123;<span class="begin-block">#each users</span>&#125;</span><span class="xml"> &#125;</span><br><span class="line">        <span class="tag">&lt;<span class="title">tr</span> <span class="attribute">data-id</span>=<span class="value">"</span></span></span><span class="expression">&#123; &#123;<span class="variable">id</span>&#125;</span><span class="xml"><span class="tag"><span class="value"> &#125;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">td</span>&gt;</span></span><span class="expression">&#123; &#123;<span class="variable">login</span>&#125;</span><span class="xml"> &#125;<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">td</span> <span class="attribute">data-id</span>=<span class="value">"</span></span></span><span class="expression">&#123; &#123;<span class="variable">groupId</span>&#125;</span><span class="xml"><span class="tag"><span class="value"> &#125;"</span>&gt;</span></span><span class="expression">&#123; &#123;<span class="begin-block">#with </span>(<span class="variable">lookup</span> <span class="variable">..</span><span class="end-block">/groups </span>@<span class="variable">index</span>)&#125;</span><span class="xml"> &#125;</span><span class="expression">&#123; &#123;<span class="variable">title</span>&#125;</span><span class="xml"> &#125;</span><span class="expression">&#123; &#123;<span class="end-block">/with</span>&#125;</span><span class="xml"> &#125;<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">    </span><span class="expression">&#123; &#123;<span class="end-block">/each</span>&#125;</span><span class="xml"> &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="title">table</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="自定义helper">自定义helper</h3><p>内置的helper不够强大，所以通常需要写js代码自定义helper，先看一个简单的单行helper。</p>
+<h4 id="行级helper">行级helper</h4><h5 id="传值">传值</h5><p>数值、字符串、布尔值这种常规数据可以直接传入，同时也可以传递JSON对象（但只能传一个），以key=value这种形式写在后面，最后就可以通过参数的hash属性来访问了。</p>
+<p>模板</p>
+<pre><code>{ {agree_button <span class="string">"My Text"</span> <span class="keyword">class</span>=<span class="string">"my-class"</span> visible=<span class="literal">true</span> counter=<span class="number">4</span>} }
+</code></pre><p>代码</p>
+<pre><code>hbs.registerHelper(<span class="string">'agree_button'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+ <span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">0</span>]);<span class="comment">//==&gt;"My Text"</span>
+ <span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">1</span>].hash);<span class="comment">//==&gt;{class:"my-class",visible:true,conter:4}</span>
+}
+</code></pre><h5 id="传变量">传变量</h5><p>传变量时可以用this指针来指代它访问属性，通过逻辑判断后可以返回一段html代码，不过太建议这样做。考虑以后的维护性，这种html代码和js代码混合起来的维护性是比较差的，如果要抽象层组件还是使用分页比较好。</p>
+<p>模板：</p>
+<pre><code>{ {agree_button <span class="keyword">person</span>} }
+</code></pre><p>注册helper：</p>
+<pre><code>hbs.registerHelper('agree_button', function(p) {
+  console.log(p===this);//==&gt; true
+  var blog = hbs.handlebars.escapeExpression(this.<span class="keyword">person</span>.blog),
+      name = hbs.handlebars.escapeExpression(this.<span class="keyword">person</span>.name);
+
+  return new hbs.handlebars.SafeString(
+    <span class="string">"&lt;a href='"</span>+blog+<span class="string">"'&gt;"</span>+ name + <span class="string">"&lt;/button&gt;"</span>
+  );
+});
+</code></pre><p>数据：</p>
+<pre><code>var context = {
+    <span class="keyword">person</span>:{name: <span class="string">"亚里士朱德"</span>, blog: <span class="string">"https://yalishizhude.github.io"</span>} };
+};
+</code></pre><p>html页面：</p>
+<pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://yalishizhude.github.io"</span>&gt;</span>亚里士朱德<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+</code></pre><p>当内容只想做字符串解析的时候可以用 <strong>escapeExpression</strong> 和 <strong>SafetString</strong> 函数。</p>
+<h4 id="块级helper">块级helper</h4><p>块级helper获取参数的方式跟之前差不多，只是最后多了一个参数，这个参数有两个函数<code>fn</code>和<code>revers</code>可以和<code>else</code>搭配使用。后面将会讲解。</p>
+<p>模板：</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123;#list nav&#125; &#125;</span><br><span class="line">  &lt;a href=<span class="string">"&#123; &#123;url&#125; &#125;"</span>&gt;&#123; &#123;title&#125; &#125;&lt;/a&gt;</span><br><span class="line">&#123; &#123;/list&#125; &#125;</span><br></pre></td></tr></table></figure>
+<p>注册helper：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Handlebars.registerHelper('<span class="keyword">list</span>', function(context, options) &#123;</span><br><span class="line">  <span class="keyword">var</span> <span class="keyword">ret</span> = <span class="string">"&lt;ul&gt;"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=0, j=context.length; i&lt;j; i++) &#123;</span><br><span class="line">    <span class="keyword">ret</span> = <span class="keyword">ret</span> + <span class="string">"&lt;li&gt;"</span> + options.fn(context[i]) + <span class="string">"&lt;/li&gt;"</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">ret</span> + <span class="string">"&lt;/ul&gt;"</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>数据：</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">&#123;</span><br><span class="line">  nav: <span class="collection">[</span><br><span class="line">    <span class="collection">&#123; url: <span class="string">"https://yalishihzude.github.io"</span>, title: <span class="string">"blog"</span> &#125;</span>,</span><br><span class="line">    <span class="collection">&#123; url: <span class="string">"https://www.github.com/yalishizhude"</span>, title: <span class="string">"github"</span> &#125;</span>,</span><br><span class="line">  ]</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>html页面：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://yalishizhude.github.io"</span>&gt;</span>blog<span class="tag">&lt;/<span class="title">a</span>&gt;</span> <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://www.github.com/yalishizhude"</span>&gt;</span>github<span class="tag">&lt;/<span class="title">a</span>&gt;</span> <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="自定义helper-1">自定义helper</h4><p>each的index变量比较常用，但是它是从0开始的，往往不符合业务中的需求，这里写个helper来扩展一下。</p>
+<p>注册helper：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">hbs.registerHelper(<span class="string">'eval'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">str, options</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> reg = <span class="regexp">/\&#123;\&#123;.*?\&#125;\&#125;/g</span>;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">var</span> variables = str.match(reg);</span><br><span class="line">    <span class="keyword">var</span> context = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">//如果是each</span></span><br><span class="line">    <span class="keyword">if</span>(options.data)&#123;</span><br><span class="line">      context.first = context.first||options.data.first;</span><br><span class="line">      context.last = context.last||options.data.last;</span><br><span class="line">      context.index = context.index||options.data.index;</span><br><span class="line">      context.key = context.key||options.data.key;</span><br><span class="line">    &#125;</span><br><span class="line">    _.each(variables, <span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">var</span> key = v.replace(<span class="regexp">/&#123; &#123;|&#125; &#125;/g</span>,<span class="string">""</span>);</span><br><span class="line">      <span class="keyword">var</span> value = <span class="keyword">typeof</span> context[key]===<span class="string">"string"</span>?(<span class="string">'"'</span>+context[key]+<span class="string">'"'</span>):context[key];</span><br><span class="line">      str = str.replace(v, value);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">      result = <span class="built_in">eval</span>(str);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> hbs.handlebars.SafeString(result);</span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> hbs.handlebars.SafeString(<span class="string">''</span>);</span><br><span class="line">      <span class="built_in">console</span>.log(str,<span class="string">'--Handlerbars Helper "eval" deal with wrong expression!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>模板：</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">&#123; <span class="collection">&#123;#each list&#125;</span> &#125;</span></span><br><span class="line"><span class="collection">&#123; <span class="collection">&#123;eval '<span class="collection">&#123; <span class="collection">&#123;index&#125;</span> &#125;</span><span class="number">+1</span>'&#125;</span> &#125;</span></span><br><span class="line"><span class="collection">&#123; <span class="collection">&#123;/each&#125;</span> &#125;</span></span><br></pre></td></tr></table></figure>
+<p>上面说到if不支持复杂的表达式，如果是“&amp;&amp;”操作还可以用子表达式来实现，更加复杂的就不好办了，这里我写了一个helper来实现。</p>
+<p>注册helper：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">hbs.registerHelper(<span class="string">'ex'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">str, options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> reg = <span class="regexp">/\&#123;\&#123;.*?\&#125;\&#125;/g</span>;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">var</span> variables = str.match(reg);</span><br><span class="line">    <span class="keyword">var</span> context = <span class="keyword">this</span>;</span><br><span class="line">    _.each(variables, <span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">var</span> key = v.replace(<span class="regexp">/&#123; &#123;|&#125; &#125;/g</span>,<span class="string">""</span>);</span><br><span class="line">      <span class="keyword">var</span> value = <span class="keyword">typeof</span> context[key]===<span class="string">"string"</span>?(<span class="string">'"'</span>+context[key]+<span class="string">'"'</span>):context[key];</span><br><span class="line">      str = str.replace(v, value);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">      result = <span class="built_in">eval</span>(str);</span><br><span class="line">      <span class="keyword">if</span> (result) &#123;</span><br><span class="line">        <span class="keyword">return</span> options.fn(<span class="keyword">this</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> options.inverse(<span class="keyword">this</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(str,<span class="string">'--Handlerbars Helper "ex" deal with wrong expression!'</span>);</span><br><span class="line">      <span class="keyword">return</span> options.inverse(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>模板：</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="expression">&#123; &#123;<span class="begin-block">#ex </span><span class="string">"&#123; &#123;state&#125; &#125;==='submiting'"</span>&#125;</span><span class="xml"> &#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"icon cross-danger"</span>&gt;</span>1<span class="tag">&lt;/<span class="title">i</span>&gt;</span></span><br><span class="line"></span><span class="expression">&#123; &#123;<span class="variable">else</span>&#125;</span><span class="xml"> &#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"icon cross-success"</span>&gt;</span>2<span class="tag">&lt;/<span class="title">i</span>&gt;</span></span><br><span class="line"></span><span class="expression">&#123; &#123;<span class="end-block">/ex</span>&#125;</span><span class="xml"> &#125;</span></span><br></pre></td></tr></table></figure>
+<p>先将整个逻辑表达式作为一个字符串传入，然后替换其中的变量值，最后用eval函数来解析表达式，同时增加异常处理。</p>
+<h2 id="高级玩家：partial">高级玩家：partial</h2><p>比较推崇使用分页来实现组件化。分页跟helper一样需要先注册。在hbs模块中可以批量注册，比较简单。</p>
+<p><code>hbs.registerPartials(__dirname + &#39;/views/partials&#39;);</code></p>
+<h3 id="基础引用">基础引用</h3><p>用“&gt;”来引用模板，这种情况一般用来处理页头页尾这种简单的分页。后面可以传入参数。<br><code>{ {&gt; myPartial param} }</code></p>
+<p>当使用块级表达式时，我们通常添加“#”，而分页是“&gt;”，所以块级分页使用“#&gt;”，这里表示如果layout分页不存在则显示块内的内容My Content。<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123;#&gt; layout &#125; &#125;</span><br><span class="line">  My Content</span><br><span class="line">&#123; &#123;/layout&#125; &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="动态分页">动态分页</h3><p>当然也可以用表达式来代替分页名称</p>
+<p><code>{ {&gt; (whichPartial) } }</code></p>
+<p>当分页中一部分代码是固定的，另一部分是变化的时候，可以在分页中添加“@partial-block”，这时当引用这个分页时，在内部编写代码将会填充到这个位置。</p>
+<p>partial.hbs：<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">亚里士朱德</span><br><span class="line">&#123; &#123;&gt; @partial-block &#125; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>模板：<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123;#&gt;partial&#125; &#125;</span><br><span class="line">https:yalishizhude.github.io</span><br><span class="line">&#123; &#123;/partial&#125; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>html页面：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">亚里士朱德</span><br><span class="line">https:yalishizhude<span class="class">.github</span><span class="class">.io</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="内联分页">内联分页</h3><p>当有多段代码需要填充到分页时,可以用如下方法。分页中内嵌分页变量，模板中通过内联分页的方式传入。</p>
+<p>模板：<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123;#&gt; partial&#125; &#125;</span><br><span class="line">  &#123; &#123;#*inline <span class="string">"nav"</span>&#125; &#125;</span><br><span class="line">    亚里士朱德</span><br><span class="line">  &#123; &#123;/inline&#125; &#125;</span><br><span class="line">  &#123; &#123;#*inline <span class="string">"content"</span>&#125; &#125;</span><br><span class="line">    https://yalishizhude.github.io</span><br><span class="line">  &#123; &#123;/inline&#125; &#125;</span><br><span class="line">&#123; &#123;/partial&#125; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>partial.hbs：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"nav"</span>&gt;</span><br><span class="line">  &#123; &#123;&gt; nav&#125; &#125;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"content"</span>&gt;</span><br><span class="line">  &#123; &#123;&gt; content&#125; &#125;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>html页面：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="keyword">class</span>=<span class="string">"nav"</span>&gt;</span><br><span class="line">    亚里士朱德</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div <span class="keyword">class</span>=<span class="string">"content"</span>&gt;</span><br><span class="line">    https:<span class="comment">//yalishizhude.github.io</span></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="大师级玩家：API">大师级玩家：API</h2><p>本文列举的只是handlebars中最重要和常用的功能，更多细碎的功能可以去查看<br><a href="http://handlebarsjs.com/reference.html" target="_blank" rel="external">官方API</a>。</p>
+<h1 id="开头的问题">开头的问题</h1><blockquote>
+<p>我想将导航条写成一个分页(partial)，导航条左边的文字标题是可以通过参数传递的，但是右边的内容可能是文字、图片其它元素，需要具体业务自定义实现。我又不想把html代码写在js中，所以希望在模板中将这段未知的模板代码填充到分页中进行展现。我在官网文档中找到了 NaN来实现此功能，但是本机实验一直解析报错。<br>解决过程：<br>    这个问题原因可能有两个，一是官方文档有错，二是本机环境的插件有问题（Express用hbs模块，该模块封装了handlebars引擎模块）。为了验证官方文档的正确性，我找到了一个在线handlebars解析器，输入文档中的代码时可以正确解析，那么只可能出现在hbs模块了。这时在github上找到hbs模块最新版本为4，查看本地版本为3，更新后果然可以正常解析了。</p>
+</blockquote>
+<h1 id="总结">总结</h1><p>handlebars让我们看到一个好的插件应该有的特征：</p>
+<ul>
+<li>可识别性。接口简单，使用方便，容易上手。</li>
+<li>高可用性。自带常用一些功能（helper），不求多而求精。</li>
+<li>可扩展性。复杂的业务逻辑，开发人员可以自定义helper去扩展和实现。</li>
+</ul>
+
+      
+      <hr>
+      <p>
+        博客：<a href="http://yalishizhude.github.io">http://yalishizhude.github.io</a><br>
+        作者：<a href="http://yalishizhude.github.io/about/">亚里士朱德</a>
+      </p>
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html/"> #html </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/05/willpower/">《意志力-关于专注、自控与效率的心理学》读书笔记</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/06/api-test-3/">接口调试（下）——让接口服务器为前后端解耦</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/01/22/handlebars/"
+     data-title="handlebars玩家指南"
+     data-content=""
+     data-url="http://yalishizhude.github.io/2016/01/22/handlebars/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2016/01/22/handlebars/"
+               data-title="handlebars玩家指南" data-url="http://yalishizhude.github.io/2016/01/22/handlebars/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+          <!-- 多说热评文章-->
+          <p>热评文章</p>
+          <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="https://avatars0.githubusercontent.com/u/3870098?v=3&s=460" alt="亚里士朱德" />
+          <p class="site-author-name">亚里士朱德</p>
+        </div>
+        <p class="site-description motion-element">阅读，实践，学习，积累，分享</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/yalishizhude" target="_blank">github</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://yalishizhude.github.io" target="_blank">博客</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/arisjutle" target="_blank">微博</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.imooc.com/myclub/article/uid/1098050" target="_blank">慕课网</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.jobbole.com/members/yalishizhude" target="_blank">伯乐在线</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://geek.csdn.net/user/publishlist/yalishizhude" target="_blank">极客头条</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://toutiao.io/subjects/11510" target="_blank">开发者头条</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么需要模板引擎"><span class="nav-number">1.</span> <span class="nav-text">为什么需要模板引擎</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#那些年我用过的模板引擎"><span class="nav-number">2.</span> <span class="nav-text">那些年我用过的模板引擎</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#码解handlebars"><span class="nav-number">3.</span> <span class="nav-text">码解handlebars</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初级玩家：表达式"><span class="nav-number">3.1.</span> <span class="nav-text">初级玩家：表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中级玩家：helper"><span class="nav-number">3.2.</span> <span class="nav-text">中级玩家：helper</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认helper"><span class="nav-number">3.2.1.</span> <span class="nav-text">默认helper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if_else"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">if else</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unless"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">unless</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#each"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">each</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#with"><span class="nav-number">3.2.1.4.</span> <span class="nav-text">with</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lookup"><span class="nav-number">3.2.1.5.</span> <span class="nav-text">lookup</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义helper"><span class="nav-number">3.2.2.</span> <span class="nav-text">自定义helper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#行级helper"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">行级helper</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#传值"><span class="nav-number">3.2.2.1.1.</span> <span class="nav-text">传值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#传变量"><span class="nav-number">3.2.2.1.2.</span> <span class="nav-text">传变量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块级helper"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">块级helper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义helper-1"><span class="nav-number">3.2.2.3.</span> <span class="nav-text">自定义helper</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级玩家：partial"><span class="nav-number">3.3.</span> <span class="nav-text">高级玩家：partial</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础引用"><span class="nav-number">3.3.1.</span> <span class="nav-text">基础引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态分页"><span class="nav-number">3.3.2.</span> <span class="nav-text">动态分页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联分页"><span class="nav-number">3.3.3.</span> <span class="nav-text">内联分页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大师级玩家：API"><span class="nav-number">3.4.</span> <span class="nav-text">大师级玩家：API</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开头的问题"><span class="nav-number">4.</span> <span class="nav-text">开头的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+    <!-- google -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 内容1 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:600px"
+         data-ad-client="ca-pub-7203019032808513"
+         data-ad-slot="7541596384"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        我被看了 <span id="busuanzi_value_site_pv"></span> 次~您是第<span id="busuanzi_value_site_uv"></span>个小伙伴
+        <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan style='visibility:hidden;' id='cnzz_stat_icon_1255866986'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255866986%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+<div class="copyright">
+  
+  &copy; &nbsp;  2015 - 
+  2016
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">亚里士朱德</span>
+  <span class="with-love">&spades;</span>
+  <span class="author">yalishizhude@163.com</span>
+</div>
+
+<div class="powered-by" style="visibility:hidden;">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info" style="visibility:hidden;">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div> 
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yalishizhude"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+  
+
+
+  <!-- lazyload -->
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+      <script type="text/javascript">
+        jQuery(function() {
+            jQuery("#posts img").lazyload({
+              placeholder:"http://www.arao.me/loading.gif",
+                effect:"fadeIn"
+              });
+            });
+    </script>
+</body>
+</html>

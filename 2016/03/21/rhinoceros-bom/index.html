@@ -1,0 +1,771 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="sogou_site_verification" content="WEhegz1Bts"/>
+<meta name="360-site-verification" content="ab30d6f9900b55bcfa635dbcf869b683" />
+
+  <meta name="google-site-verification" content="V9_Ys0xWOwD0m2gXTYo15k9tyfvl16H4YE5ijFHyo50" />
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="阅读，实践，学习，积累，分享" />
+
+
+
+  <meta name="keywords" content="js,读书," />
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="亚里士朱德的博客" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'always'
+  };
+</script>
+
+
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?ab4daa880e07842428ff185fb1edbd6d";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+  <title> 一起来啃犀牛书：BOM // 亚里士朱德的博客 </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">亚里士朱德的博客</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-subscribe">
+          <a href="/subscribe">
+            <i class="menu-item-icon icon-subscribe"></i> <br />
+            订阅博客
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html">
+            <i class="menu-item-icon icon-commonweal"></i> <br />
+            公益404
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              一起来啃犀牛书：BOM
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2016-03-21
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/js/">js</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2016/03/21/rhinoceros-bom/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/21/rhinoceros-bom/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <blockquote>
+<p>《javascript权威指南》这本书就像是js界的圣经，对于大神和新手都应该是必读书。但是这本近千页的书已经厚到让人望而生畏，要通读它不仅要时间也需要毅力。为了提升自己在js语言上的深度，所以抱着工匠精神开始研读，此文包含书中实用性较强的一些知识点和代码，算做读书笔记吧~</p>
+</blockquote>
+<img src="/2016/03/21/rhinoceros-bom/bom.png" alt="bom.png" title="">
+<p>BOM全称为Browser Object Model浏览器对象模型，也就是浏览器端的window对象及其默认属性和函数。</p>
+<a id="more"></a>
+<h1 id="计时器">计时器</h1><h2 id="知识点">知识点</h2><p>也就4个函数</p>
+<ul>
+<li>setInterval</li>
+<li>clearInterval</li>
+<li>setTimeout</li>
+<li>clearTimeout<br>这里要注意的是setInterval/setTimeout第一个参数可为函数或字符串，传入字符串时相当于调用eval来执行。同时调用指定函数时都是可以传入参数的。而setTimeout第二个参数如果传入0，那么传入的函数不会立即执行，而是等到前面处于等待状态的时间处理程序全部执行完成后。</li>
+</ul>
+<h2 id="例题">例题</h2><p>定义一个定时器函数invoke，可定时执行或延迟执行指定函数。</p>
+<h2 id="代码">代码</h2><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">invoke</span><span class="params">(f, start, interval, end)</span> &#123;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="params">(!start)</span> start = <span class="number">0</span>;          </span><br><span class="line">    <span class="keyword">if</span> <span class="params">(arguments.length &lt;= <span class="number">2</span>)</span>      <span class="comment">// 延迟执行</span></span><br><span class="line">        setTimeout<span class="params">(f, start)</span>;       </span><br><span class="line">    <span class="keyword">else</span> &#123;                          <span class="comment">// 延迟一段时间后重复执行</span></span><br><span class="line">        setTimeout<span class="params">(repeat, start)</span>;  </span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">repeat</span><span class="params">()</span> &#123;</span>         </span><br><span class="line">            var h = setInterval<span class="params">(f, interval)</span>;</span><br><span class="line">            <span class="comment">// 在end毫秒时停止重复</span></span><br><span class="line">            <span class="keyword">if</span> <span class="params">(end)</span> setTimeout<span class="params">(function<span class="params">()</span> &#123; clearInterval<span class="params">(h)</span>; &#125;, end)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="浏览器定位和导航">浏览器定位和导航</h1><h2 id="知识点-1">知识点</h2><ul>
+<li>hash属性。一般用来滚动到定位元素，移动端多用于SAP，通过它在浏览器端实现路由逻辑的加载。</li>
+<li>search属性。URL中的参数，常用于跨页面传参和向服务端传参。</li>
+<li>跳转属性/函数。<code>location.href = url;</code>相当于<code>location.assign(url);</code>这两种方法跳转都会留下历史纪录，而<code>location.replace(url)</code>则不会。</li>
+</ul>
+<h2 id="例题-1">例题</h2><p>提取URL的搜索字符串中的参数。</p>
+<h2 id="代码-1">代码</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function urlArgs() &#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">args</span> = &#123;&#125;;                             </span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">query</span> = location.<span class="keyword">search</span>.substring(1);  <span class="comment">// 过滤掉'?'</span></span><br><span class="line">    <span class="keyword">var</span> pairs = <span class="keyword">query</span>.<span class="keyword">split</span>(<span class="string">"&amp;"</span>);              </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = 0; i &lt; pairs.length; i++) &#123;    </span><br><span class="line">        <span class="keyword">var</span> pos = pairs[i].indexOf('=');       </span><br><span class="line">        <span class="keyword">if</span> (pos == -1) <span class="keyword">continue</span>;               </span><br><span class="line">        <span class="keyword">var</span> name = pairs[i].substring(0,pos);  </span><br><span class="line">        <span class="keyword">var</span> value = pairs[i].substring(pos+1);</span><br><span class="line">        value = decodeURIComponent(value);     </span><br><span class="line">        <span class="keyword">args</span>[name] = value;                    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">args</span>;                              </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个函数很常用~</p>
+<h1 id="history">history</h1><h2 id="知识点-2">知识点</h2><p>主要掌握3个函数：</p>
+<ul>
+<li>back。相当于浏览器后退按钮</li>
+<li>forward。相当于浏览器前进按钮</li>
+<li>go。正数参数n：相当于浏览器前进按钮点击n次。负整数参数n：想当于浏览器后退按钮点击n次。</li>
+</ul>
+<h1 id="浏览器信息">浏览器信息</h1><h2 id="知识点-3">知识点</h2><p>navigator属性用来获取浏览器信息，重要的属性有4个：</p>
+<ul>
+<li>appName。IE:”Microsoft Internet Explorer”，其它：”Netscape”</li>
+<li>appVersion。浏览器厂商和详细信息。</li>
+<li>platform。操作系统信息。</li>
+<li>userAgent。包含appVersion所有信息和其他细节信息，格式不定，比较常用。适用于解决特定浏览器下的bug。</li>
+</ul>
+<h2 id="例题-2">例题</h2><p>使用userAgent来识别浏览器。</p>
+<h2 id="代码-2">代码</h2><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//"webkit": Safari或Chrome版本号</span></span><br><span class="line"><span class="comment">//"opera": 版本号就是软件的版本号</span></span><br><span class="line"><span class="comment">//"mozilla"： 版本号是Gecko</span></span><br><span class="line"><span class="comment">//"msie" 版本号就是软件版本</span></span><br><span class="line">var browser = <span class="params">(function<span class="params">()</span> &#123;</span><br><span class="line">     var s = navigator.userAgent.toLowerCase<span class="params">()</span>;</span><br><span class="line">     var match = /<span class="params">(webkit)</span>[ \/]<span class="params">([\w.]+)</span>/.exec<span class="params">(s)</span> ||</span><br><span class="line">	 /<span class="params">(opera)</span><span class="params">(?:.*version)</span>?[ \/]<span class="params">([\w.]+)</span>/.exec<span class="params">(s)</span> ||</span><br><span class="line">	 /<span class="params">(msie)</span> <span class="params">([\w.]+)</span>/.exec<span class="params">(s)</span> ||</span><br><span class="line">	 !/compatible/.test<span class="params">(s)</span> &amp;&amp; /<span class="params">(mozilla)</span><span class="params">(?:.*? rv:<span class="params">([\w.]+)</span>)</span>?/.exec<span class="params">(s)</span> ||</span><br><span class="line">	 [];</span><br><span class="line">     return &#123; name: match[<span class="number">1</span>] || <span class="string">""</span>, version: match[<span class="number">2</span>] || <span class="string">"0"</span> &#125;;</span><br><span class="line">&#125;<span class="params">()</span>)</span>;</span><br></pre></td></tr></table></figure>
+<p>这里用了jquery1.4的代码。</p>
+<h1 id="对话框">对话框</h1><h2 id="知识点-4">知识点</h2><ul>
+<li>confirm/prompt/alert。会产生阻塞的原生弹出框。</li>
+<li>showModalDialog。包含HTML格式的模态对话框。</li>
+</ul>
+<p>在正式生产环境中不建议使用以上对话框，还是自定义吧~</p>
+<h1 id="错误处理">错误处理</h1><h2 id="知识点-5">知识点</h2><p><code>window.onerror = function(msg, url, line)</code></p>
+<p>msg:错误描述。<br>url:报错的js的url。<br>line:发生错误的行数。</p>
+<p>firefox中必须返回true值。</p>
+<p>这个函数用来收集异常信息，然后回传服务器记录日志，供前端开发者调试修复bug还是很不错的~</p>
+<h1 id="文档元素">文档元素</h1><h2 id="知识点-6">知识点</h2><p><code>document.getElementById(&quot;you&quot;);</code><br>相当于<br><code>window.you</code><br>注意如果和已有对象冲突则以默认对象为主，这是遗留方式，不推荐。应该算一个冷知识吧。</p>
+<h1 id="窗体和窗口">窗体和窗口</h1><h2 id="知识点-7">知识点</h2><p>*open/close。open创建窗口后返回新窗口句柄，而新窗口可通过opener来调用父窗口的对象。需要注意的是：不过大部分浏览器增加了弹出窗口过滤功能，通常只有用户手动点击才会执行（广告商就是利用它来做弹出广告的）。大多数浏览器只允许关闭由自己的js代码创建的窗口。</p>
+<ul>
+<li>parent/frames。父窗体通过frames属性获取iframe对象，子窗体通过parent获取父对象。</li>
+</ul>
+<p>百度脑图下载地址：<a href="http://yalishizhude.github.io/subscribe/">http://yalishizhude.github.io/subscribe/</a></p>
+
+      
+      <hr>
+      <p>
+        博客：<a href="http://yalishizhude.github.io">http://yalishizhude.github.io</a><br>
+        作者：<a href="http://yalishizhude.github.io/about/">亚里士朱德</a>
+      </p>
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/"> #js </a>
+          
+            <a href="/tags/读书/"> #读书 </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/31/rhinoceros-reg/">一起来啃犀牛书：正则表达式</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/14/rhinoceros-event/">一起来啃犀牛书：事件处理</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/21/rhinoceros-bom/"
+     data-title="一起来啃犀牛书：BOM"
+     data-content=""
+     data-url="http://yalishizhude.github.io/2016/03/21/rhinoceros-bom/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2016/03/21/rhinoceros-bom/"
+               data-title="一起来啃犀牛书：BOM" data-url="http://yalishizhude.github.io/2016/03/21/rhinoceros-bom/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+          <!-- 多说热评文章-->
+          <p>热评文章</p>
+          <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="https://avatars0.githubusercontent.com/u/3870098?v=3&s=460" alt="亚里士朱德" />
+          <p class="site-author-name">亚里士朱德</p>
+        </div>
+        <p class="site-description motion-element">阅读，实践，学习，积累，分享</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/yalishizhude" target="_blank">github</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://yalishizhude.github.io" target="_blank">博客</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/arisjutle" target="_blank">微博</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.imooc.com/myclub/article/uid/1098050" target="_blank">慕课网</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.jobbole.com/members/yalishizhude" target="_blank">伯乐在线</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://geek.csdn.net/user/publishlist/yalishizhude" target="_blank">极客头条</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://toutiao.io/subjects/11510" target="_blank">开发者头条</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计时器"><span class="nav-number">1.</span> <span class="nav-text">计时器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-number">1.1.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题"><span class="nav-number">1.2.</span> <span class="nav-text">例题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器定位和导航"><span class="nav-number">2.</span> <span class="nav-text">浏览器定位和导航</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-1"><span class="nav-number">2.1.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题-1"><span class="nav-number">2.2.</span> <span class="nav-text">例题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-1"><span class="nav-number">2.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#history"><span class="nav-number">3.</span> <span class="nav-text">history</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-2"><span class="nav-number">3.1.</span> <span class="nav-text">知识点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器信息"><span class="nav-number">4.</span> <span class="nav-text">浏览器信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-3"><span class="nav-number">4.1.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题-2"><span class="nav-number">4.2.</span> <span class="nav-text">例题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-2"><span class="nav-number">4.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对话框"><span class="nav-number">5.</span> <span class="nav-text">对话框</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-4"><span class="nav-number">5.1.</span> <span class="nav-text">知识点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误处理"><span class="nav-number">6.</span> <span class="nav-text">错误处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-5"><span class="nav-number">6.1.</span> <span class="nav-text">知识点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文档元素"><span class="nav-number">7.</span> <span class="nav-text">文档元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-6"><span class="nav-number">7.1.</span> <span class="nav-text">知识点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#窗体和窗口"><span class="nav-number">8.</span> <span class="nav-text">窗体和窗口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-7"><span class="nav-number">8.1.</span> <span class="nav-text">知识点</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+    <!-- google -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 内容1 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:600px"
+         data-ad-client="ca-pub-7203019032808513"
+         data-ad-slot="7541596384"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        我被看了 <span id="busuanzi_value_site_pv"></span> 次~您是第<span id="busuanzi_value_site_uv"></span>个小伙伴
+        <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan style='visibility:hidden;' id='cnzz_stat_icon_1255866986'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255866986%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+<div class="copyright">
+  
+  &copy; &nbsp;  2015 - 
+  2016
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">亚里士朱德</span>
+  <span class="with-love">&spades;</span>
+  <span class="author">yalishizhude@163.com</span>
+</div>
+
+<div class="powered-by" style="visibility:hidden;">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info" style="visibility:hidden;">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div> 
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yalishizhude"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+  
+
+
+  <!-- lazyload -->
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+      <script type="text/javascript">
+        jQuery(function() {
+            jQuery("#posts img").lazyload({
+              placeholder:"http://www.arao.me/loading.gif",
+                effect:"fadeIn"
+              });
+            });
+    </script>
+</body>
+</html>

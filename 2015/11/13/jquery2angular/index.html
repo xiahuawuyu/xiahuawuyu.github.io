@@ -1,0 +1,779 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="sogou_site_verification" content="WEhegz1Bts"/>
+<meta name="360-site-verification" content="ab30d6f9900b55bcfa635dbcf869b683" />
+
+  <meta name="google-site-verification" content="V9_Ys0xWOwD0m2gXTYo15k9tyfvl16H4YE5ijFHyo50" />
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="阅读，实践，学习，积累，分享" />
+
+
+
+  <meta name="keywords" content="Angular,JQuery," />
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="亚里士朱德的博客" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'always'
+  };
+</script>
+
+
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?ab4daa880e07842428ff185fb1edbd6d";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+  <title> 从JQuery到Angular的一次改版 // 亚里士朱德的博客 </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">亚里士朱德的博客</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-subscribe">
+          <a href="/subscribe">
+            <i class="menu-item-icon icon-subscribe"></i> <br />
+            订阅博客
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html">
+            <i class="menu-item-icon icon-commonweal"></i> <br />
+            公益404
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              从JQuery到Angular的一次改版
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-11-13
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/Angular/">Angular</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/11/13/jquery2angular/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/13/jquery2angular/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <h1 id="前言">前言</h1><p>最近主要在对之前的流程进行改版优化，之前一直使用的JQuery来实现，因为考虑到Angular在可移植性、可维护性、耦合性方面都优于JQuery，缺点就是学习成本比较高，不过之前一直在微信端使用Angular，所以这一点也不成问题。于是探坑之旅就这样开始了…</p>
+<a id="more"></a>
+<h1 id="代码量">代码量</h1><h2 id="JQuery">JQuery</h2><p>体积：84.6k（html 20.2k，js 64.4k）<br>文件数：9（4个html，5个js）</p>
+<h2 id="Angular">Angular</h2><p>体积：95.1k（html 39.7k，js 55.4k）<br>文件：12（5个html，7个js）</p>
+<p>这里只考虑业务逻辑，忽略第三方代码。<br>原有的业务逻辑由js动态生成dom，所以js部分会比较庞大。<br>在html插入指令和业务逻辑，所以html体积增大。</p>
+<h1 id="页面结构">页面结构</h1><p>整个业务流程分为3个步骤，每个步骤完成之后才能进入下个步骤，所有步骤完成之后才可以提交给后端。<br>最简单的实现方法是把每个步骤做成表单放在一个页面里面，所有表单完成后抽取整合放在ajax里进行提交。这样实现的话容易造成代码的耦合性提高从而可维护性降低，并不是最佳的实现方式。所以对于JQuery和Angular分别采取了不同的实现形式。</p>
+<h2 id="JQuery-1">JQuery</h2><p>类似单页应用的加载方式，好处的就是不会刷新页面，数据不丢失，容易整合提交</p>
+<h3 id="路由">路由</h3><p>考虑到学习成本以及业务流程相对简单，没有使用backbone之类的第三方js管理路由，自己对hash值进行判断来管理路由。首先实现<code>onhashchange</code>函数来监控路由变化</p>
+<pre><code>window.onhashchange = function()<span class="decorator">{...}</span>;
+</code></pre><p>然后获取<code>location.hash</code>对其判断</p>
+<pre><code><span class="keyword">switch</span> (location.hash) {
+  <span class="keyword">case</span> <span class="string">'#step-0'</span>:
+    <span class="keyword">break</span>;
+    <span class="comment">//此处省略几十行代码</span>
+}
+</code></pre><p>路由的跳转也是通过修改<code>location.hash</code>值来实现，这里url使用了underscore的template的函数，起作用可以理解为<code>replace</code>。</p>
+<pre><code><span class="keyword">var</span> urlTemplate = _.<span class="keyword">template</span>(location.pathname + location.search + '<span class="comment">#&lt;%=step%&gt;');</span>
+location.href = urlTemplate({step: 'step-<span class="number">2</span>'});
+</code></pre><h3 id="分页">分页</h3><p>使用的JQuery的load函数,这个函数从服务端加载html，然后填充在所选dom中，加载完成后执行回调函数进行初始化操作。</p>
+<pre><code>$(<span class="string">'#view'</span>).load(url, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+  init();
+});
+</code></pre><h2 id="Angular-1">Angular</h2><p>用单页路由的形式也是可以实现的，不过我采用了指令的方式伪装成“分页”来实现。这样也达到了降低耦合性的效果。</p>
+<h3 id="“分页”">“分页”</h3><p>前面说了，这里使用自定义的指令来做成单个分页，所以页面的切换就变成了控制指令的显示和隐藏，实现方式也很简单，使用<code>ng-show</code>通过改变<code>nowDirective</code>的值即可</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"container"</span> ng-controller=<span class="string">"mainCtrl"</span>&gt;
+    &lt;<span class="keyword">div</span> projects ng-show=<span class="string">"nowDirective=='1'"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
+    &lt;<span class="keyword">div</span> checkin ng-show=<span class="string">"nowDirective=='2'"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
+    &lt;<span class="keyword">div</span> submit ng-show=<span class="string">"nowDirective=='3'"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><h3 id="“路由”">“路由”</h3><p>不过上面只是完成了html的加载，业务逻辑初始化需要借助Angular事件三基友：<code>$emit,$on,$broadcast</code>。当指令显示完成时<code>mainCtrl</code>用<code>$broadcast</code>发出广播给每个指令中的<code>controller</code>，指令的<code>controller</code>通过<code>$on</code>来接收事件并初始化。当前流程完成后用<code>$emit</code>向上冒泡通知父<code>controller</code>完成页面切换。</p>
+<h1 id="require与Angular">require与Angular</h1><p>Angular这个东西的神奇之处在于：它本身是一个完整的框架，基本实现了开发中所需的各种功能，同时和其它第三方js又不冲突，比如JQuery、require。<br>这里使用require来管理代码并不是最优的方式，只是因为项目一直使用require来启动和管理项目上的js逻辑。Angular本身可以通过module函数来实现模块化，在项目中我也是这么实现的。</p>
+<p>比如我在定义service的时候是这么写的</p>
+<pre><code>define([<span class="string">'Angular'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">Angular</span>) </span>{
+<span class="pi">    'use strict'</span>;
+    Angular.module(<span class="string">'service'</span>, []).service(<span class="string">'customService'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="comment">//此处省略几百行代码</span>
+    });
+});
+</code></pre><p>在引用这个服务的时侯先引用对应的js文件，然后就和Angular的引用方式一样先module后service。</p>
+<pre><code>define([<span class="string">'JQuery'</span>, <span class="string">'Angular'</span>, <span class="string">'underscore'</span>, <span class="string">'./customService.js'</span>, <span class="string">'iCheck'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">$, Angular, _</span>)</span>{
+<span class="pi">    'use strict'</span>;
+    Angular.module(<span class="string">'directive'</span>, [<span class="string">'service'</span>]).directive(<span class="string">'fold'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+        <span class="comment">//此处省略几百行代码</span>
+    });
+});
+</code></pre><p>这样就完成了模块化和解耦的工作。</p>
+<h1 id="JQuery插件替换">JQuery插件替换</h1><p>以前的第三方插件大多是基于JQuery实现的，<br>以项目中的表格校验插件为例，JQuery下使用的是JQuery-validation插件，Angular下我使用Angular-validation。插件的替换分两块：样式和逻辑。逻辑放面按照官方文档进行替换即可，这里的配置文件我单独写了一个校验规则，内容不是很全，有兴趣的可以看一看 <a href="http://runjs.cn/code/lqzztwys。" target="_blank" rel="external">http://runjs.cn/code/lqzztwys。</a> 样式修改就变得很手工了，直接抠图、重写css。</p>
+<img src="/2015/11/13/jquery2angular/error.png" alt="error.png" title="">
+<img src="/2015/11/13/jquery2angular/success.png" alt="success.png" title="">
+<h1 id="数据交互">数据交互</h1><p>主要方式分两类，一类是利用浏览器缓存，如localstorage、cookie，一类是利用Angular自身的通信方式。利用浏览器经常容易出现兼容性的问题，不考虑了，Angular的内部通信机制大致有3种：</p>
+<ul>
+<li>写个service存储数据，最规范优雅</li>
+<li>利用上面提到的事件三基友，中规中矩</li>
+<li>利用父子controller之间共享$scope对象属性的特点，最简单粗暴<br>这里考虑到项目进度我做了一回粗鲁的人…囧</li>
+</ul>
+<h1 id="总结">总结</h1><ul>
+<li>Angular由于其数据绑定的特性，在操作、动态生成dom的时候非常具有优势，从此妈妈再也不用担心我忘记刷新dom/数据了~</li>
+<li>Angular非常有利于模块化，同时模块内部注意html尽量写成directive，数据操作用service，业务逻辑用controller。因为service是对数据模型的高度抽象，所以复用性较好，这次试用的service都是从微信端直接拷贝过来使用的。</li>
+</ul>
+<blockquote>
+<p>如果觉得阅读这篇文章有收获，不妨点个赞吧^_^</p>
+</blockquote>
+
+      
+      <hr>
+      <p>
+        博客：<a href="http://yalishizhude.github.io">http://yalishizhude.github.io</a><br>
+        作者：<a href="http://yalishizhude.github.io/about/">亚里士朱德</a>
+      </p>
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Angular/"> #Angular </a>
+          
+            <a href="/tags/JQuery/"> #JQuery </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/17/shake-nearby/">那么多“扫一扫”，不妨“摇一摇”——微信“摇一摇周边”功能开发实录</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/07/nginx-solutions/">【译】你应该了解Nginx的7个原因</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/11/13/jquery2angular/"
+     data-title="从JQuery到Angular的一次改版"
+     data-content=""
+     data-url="http://yalishizhude.github.io/2015/11/13/jquery2angular/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2015/11/13/jquery2angular/"
+               data-title="从JQuery到Angular的一次改版" data-url="http://yalishizhude.github.io/2015/11/13/jquery2angular/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+          <!-- 多说热评文章-->
+          <p>热评文章</p>
+          <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="https://avatars0.githubusercontent.com/u/3870098?v=3&s=460" alt="亚里士朱德" />
+          <p class="site-author-name">亚里士朱德</p>
+        </div>
+        <p class="site-description motion-element">阅读，实践，学习，积累，分享</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/yalishizhude" target="_blank">github</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://yalishizhude.github.io" target="_blank">博客</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/arisjutle" target="_blank">微博</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.imooc.com/myclub/article/uid/1098050" target="_blank">慕课网</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.jobbole.com/members/yalishizhude" target="_blank">伯乐在线</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://geek.csdn.net/user/publishlist/yalishizhude" target="_blank">极客头条</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://toutiao.io/subjects/11510" target="_blank">开发者头条</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码量"><span class="nav-number">2.</span> <span class="nav-text">代码量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JQuery"><span class="nav-number">2.1.</span> <span class="nav-text">JQuery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Angular"><span class="nav-number">2.2.</span> <span class="nav-text">Angular</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#页面结构"><span class="nav-number">3.</span> <span class="nav-text">页面结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JQuery-1"><span class="nav-number">3.1.</span> <span class="nav-text">JQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#路由"><span class="nav-number">3.1.1.</span> <span class="nav-text">路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分页"><span class="nav-number">3.1.2.</span> <span class="nav-text">分页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Angular-1"><span class="nav-number">3.2.</span> <span class="nav-text">Angular</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#“分页”"><span class="nav-number">3.2.1.</span> <span class="nav-text">“分页”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“路由”"><span class="nav-number">3.2.2.</span> <span class="nav-text">“路由”</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#require与Angular"><span class="nav-number">4.</span> <span class="nav-text">require与Angular</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JQuery插件替换"><span class="nav-number">5.</span> <span class="nav-text">JQuery插件替换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据交互"><span class="nav-number">6.</span> <span class="nav-text">数据交互</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+    <!-- google -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 内容1 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:600px"
+         data-ad-client="ca-pub-7203019032808513"
+         data-ad-slot="7541596384"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        我被看了 <span id="busuanzi_value_site_pv"></span> 次~您是第<span id="busuanzi_value_site_uv"></span>个小伙伴
+        <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan style='visibility:hidden;' id='cnzz_stat_icon_1255866986'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255866986%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+<div class="copyright">
+  
+  &copy; &nbsp;  2015 - 
+  2016
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">亚里士朱德</span>
+  <span class="with-love">&spades;</span>
+  <span class="author">yalishizhude@163.com</span>
+</div>
+
+<div class="powered-by" style="visibility:hidden;">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info" style="visibility:hidden;">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div> 
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yalishizhude"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+  
+
+
+  <!-- lazyload -->
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+      <script type="text/javascript">
+        jQuery(function() {
+            jQuery("#posts img").lazyload({
+              placeholder:"http://www.arao.me/loading.gif",
+                effect:"fadeIn"
+              });
+            });
+    </script>
+</body>
+</html>

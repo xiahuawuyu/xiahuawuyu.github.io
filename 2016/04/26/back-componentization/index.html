@@ -1,0 +1,746 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="sogou_site_verification" content="WEhegz1Bts"/>
+<meta name="360-site-verification" content="ab30d6f9900b55bcfa635dbcf869b683" />
+
+  <meta name="google-site-verification" content="V9_Ys0xWOwD0m2gXTYo15k9tyfvl16H4YE5ijFHyo50" />
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="阅读，实践，学习，积累，分享" />
+
+
+
+  <meta name="keywords" content="node.js," />
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="亚里士朱德的博客" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'always'
+  };
+</script>
+
+
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?ab4daa880e07842428ff185fb1edbd6d";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+  <title> 利用handlebars实现后端组件化 // 亚里士朱德的博客 </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">亚里士朱德的博客</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-subscribe">
+          <a href="/subscribe">
+            <i class="menu-item-icon icon-subscribe"></i> <br />
+            订阅博客
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html">
+            <i class="menu-item-icon icon-commonweal"></i> <br />
+            公益404
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              利用handlebars实现后端组件化
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2016-04-26
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/WEB架构/">WEB架构</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2016/04/26/back-componentization/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/26/back-componentization/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <p><em>似乎掌握了后端组件化的奥义^_^</em></p>
+<a id="more"></a>
+<blockquote>
+<p>基本说明（使用过exress和handlebars的可以略过）：express中的handlebars引擎是这么生成页面的：<br><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">/* layout.hbs</span><br><span class="line"> * 主模板，所有的的页面都将替换"</span><span class="expression">&#123;&#123;&#123;<span class="variable">body</span>&#125;&#125;</span><span class="xml">&#125;"，"</span><span class="expression">&#123;&#123;&#125;&#125;</span><span class="xml">"相当于占位符，由数据进行替换</span><br><span class="line"> */</span><br><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span></span><span class="expression">&#123;&#123;<span class="variable">title</span>&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    </span><span class="expression">&#123;&#123;&#123;<span class="variable">body</span>&#125;&#125;</span><span class="xml">&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line">/* index.hbs</span><br><span class="line"> * 单个页面模板，这里以首页为例。"</span><span class="expression">&#123;&#123;&gt;&#125;&#125;</span><span class="xml">"表示引用其他模板来替换，这里引用名为"partial"的模板</span><br><span class="line"> */</span><br><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span>index<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><span class="expression">&#123;&#123;&gt;<span class="variable">partial</span>&#125;&#125;</span><span class="xml"></span><br><span class="line"></span><br><span class="line">/* partial.hbs</span><br><span class="line"> * 一个分页文件，被其他模板引用，分页之间也可以互相引用。</span><br><span class="line"> */</span><br><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span>123<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">/* index.html</span><br><span class="line"> * 当浏览器请求index.html时，经过handlebars模板引擎处理后生成的页面</span><br><span class="line"> */</span><br><span class="line"> <span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">div</span>&gt;</span>index<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">div</span>&gt;</span>123<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="实现步骤1：模板">实现步骤1：模板</h1><p>react的火热让“组件化”的概念持续升温，不过组件化确实在开发中提供了高可复用的代码，大大减少了工作量和bug，确实值得提倡。举个例子。</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul <span class="keyword">class</span>=<span class="string">"titles border"</span> id=<span class="string">"navigator"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"title"</span>&gt;标题1&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"title"</span>&gt;标题2&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"title"</span>&gt;标题3&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<p>这一段html代码，会在几个页面用到，如果按照一般的做法把这段代码ctrl-c、ctrl-v到要用的页面。就会出现两个问题：1.重复代码增多（ctrl-c、ctrl-v应该是程序员的大忌），当然这不是最重要的，最重要的是第2点——维护性差。如果现在我要把“标题1”改成“标题0”，那么只能进行全量搜索然后替换，不仅操作麻烦而且容易出错。<br>如果用到了模板技术的话这个问题就很好解决，把上面那一段代码写成一个模板，在handlebars中我们成为分页，然后需要这段的代码的页面引用这个分页，如果要修改的话直接修改分页了。以handlebars为例：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//navigator.hbs</span></span><br><span class="line">&lt;ul <span class="keyword">class</span>=<span class="string">"titles border"</span> id=<span class="string">"navigator"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"title"</span>&gt;标题1&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"title"</span>&gt;标题2&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"title"</span>&gt;标题3&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在index.hbs中引用</span></span><br><span class="line">&#123;&#123;&gt;navigator&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>为什么handlebars？本文所用的后端模板引擎都以handlebars为例，原因是上次听去哪儿前端团队做的关于node.js的技术分享，炫耀了一个自己基于handlebars实现的小功能：分页中引用的css文件可以全部放到head中。心中一直觊觎这个小功能，直到最近和“组件化”的概念结合在一起考虑，发现这个功能对于实现后端的组件化很有帮助。自己对handlebars也略有研究，所以试着用handlebars来实现一下“组件化”。</p>
+</blockquote>
+<h1 id="实现步骤2：打包">实现步骤2：打包</h1><p>这样就完美了么？no~no~no~<br>上面的这一段html代码中可是有样式的，按照w3c的规范，样式应该写在css文件中，怎么实现？自然而然想到两种解决办法：</p>
+<ol>
+<li>在分页中加入link标签来引入所需的样式，想一想html代码中到处穿插link标签是什么感觉~且不说生成页面难以维护，浏览器渲染速度也会受影响。</li>
+<li>把分页所需的样式放在公共的样式文件中，这是目前我们项目的通用做法，纯粹的懒人策略，缺点很明显，很多页面引用了一些无用的样式，浪费网络带宽，尤其当项目变大时这个缺点将更加明显。<br>所以最好的解决方法是按需加载，只加载引用组件所需的样式，当然样式文件按分页拆分得这么细的话会增加请求数，影响不会太大，如果想优化的话也可以压缩合并成一个请求，这个后面再说。<br>handlerbas中常见的扩展方式就是编写helper，我们可以编写一个helper，</li>
+</ol>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line">hbs.registerHelper(<span class="string">'css'</span>, <span class="function"><span class="keyword">function</span><span class="params">(str, option)</span> </span>&#123;</span><br><span class="line">  <span class="comment">//在上下文中创建一个数组用来保存该页面需要用到的css文件</span></span><br><span class="line">  <span class="keyword">this</span>.cssList = <span class="keyword">this</span>.cssList || [];  </span><br><span class="line">  <span class="keyword">this</span>.cssList.push(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这个helper的作用就是注册一个名为”css”的helper，帮我们保存分页中用到的css文件地址。然后我们在主模板layout的head标签部分遍历cssList数组循环加载出来。</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">//layout.hbs</span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">title</span>&gt;</span></span><span class="expression">&#123;&#123;<span class="variable">title</span>&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  </span><span class="expression">&#123;&#123;<span class="begin-block">#<span class="keyword">each</span> cssList</span>&#125;&#125;</span><span class="xml"></span><br><span class="line">  <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"</span></span></span><span class="expression">&#123;&#123;<span class="variable">this</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="value">"</span> <span class="attribute">media</span>=<span class="value">"screen"</span> <span class="attribute">title</span>=<span class="value">"no title"</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></span><br><span class="line">  </span><span class="expression">&#123;&#123;<span class="end-block">/<span class="keyword">each</span></span>&#125;&#125;</span><span class="xml"></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">...</span></span><br></pre></td></tr></table></figure>
+<p>同时原来的分页改成<br><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">//navigator.hbs</span><br><span class="line"></span><span class="expression">&#123;&#123;<span class="variable">css</span> '<span class="end-block">/stylesheets</span><span class="end-block">/components</span><span class="end-block">/navigator.css</span>'&#125;&#125;</span><span class="xml"></span><br><span class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"titles border"</span> <span class="attribute">id</span>=<span class="value">"navigator"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span>标题1<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span>标题2<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span>标题3<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>上面写的只是一个简单的无逻辑的静态组件，有些组件可能会有交互效果，比如处理一些点击事件或者对外暴露可操作的接口等，那么就需要js逻辑来实现了。</p>
+<h1 id="实现步骤3：逻辑">实现步骤3：逻辑</h1><p>其实实现原理也大同小异，也是先注册一个helper，然后在主模板layout中添加，这里我们在原来的分页中引入一个js文件。具体代码如下：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line">hbs.registerHelper(<span class="string">'js'</span>, <span class="function"><span class="keyword">function</span><span class="params">(str, option)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.jsList = <span class="keyword">this</span>.jsList || [];</span><br><span class="line">  <span class="keyword">this</span>.jsList.push(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">//layout.hbs</span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">  </span><span class="expression">&#123;&#123;&#123;<span class="variable">body</span>&#125;&#125;</span><span class="xml">&#125;</span><br><span class="line">  </span><span class="expression">&#123;&#123;<span class="begin-block">#<span class="keyword">each</span> jsList</span>&#125;&#125;</span><span class="xml"></span><br><span class="line">  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"</span></span></span><span class="expression">&#123;&#123;<span class="variable">this</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="value">"</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">  </span><span class="expression">&#123;&#123;<span class="end-block">/<span class="keyword">each</span></span>&#125;&#125;</span><span class="xml"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">//navigator.hbs</span><br><span class="line"></span><span class="expression">&#123;&#123;<span class="variable">css</span> '<span class="end-block">/stylesheets</span><span class="end-block">/components</span><span class="end-block">/navigator.css</span>'&#125;&#125;</span><span class="xml"></span><br><span class="line"></span><span class="expression">&#123;&#123;<span class="variable">js</span> '<span class="end-block">/javascripts</span><span class="end-block">/components</span><span class="end-block">/navigator.js</span>'&#125;&#125;</span><span class="xml"></span><br><span class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"titles border"</span> <span class="attribute">id</span>=<span class="value">"navigator"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span>标题1<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span>标题2<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span>标题3<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>现在已经实现将css、js、html封装成独立的组件了，不过这样还是有个问题。如果a组件引用了public.css和a.css文件，而b组件引用了public.css和b.css文件，那么按照上面的做法，会在head写两个同样的link标签，组件共同依赖的文件越多，重复的标签就越多。这当然不是我们所想看到的。</p>
+<h1 id="实现步骤4：依赖">实现步骤4：依赖</h1><p>为了解决这个问题我们还需要去重复，对刚才的两个helper改造一下即可。<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line">hbs.registerHelper(<span class="string">'css'</span>, <span class="function"><span class="keyword">function</span><span class="params">(str, option)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> cssList = <span class="keyword">this</span>.cssList || [];</span><br><span class="line">  <span class="keyword">if</span>(cssList.indexOf(str)&lt;<span class="number">0</span>) &#123;</span><br><span class="line">    cssList.push(str);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.cssList = cssList.concat();</span><br><span class="line">&#125;);</span><br><span class="line">hbs.registerHelper(<span class="string">'js'</span>, <span class="function"><span class="keyword">function</span><span class="params">(str, option)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> jsList = <span class="keyword">this</span>.jsList || [];</span><br><span class="line">  <span class="keyword">if</span>(jsList.indexOf(str)&lt;<span class="number">0</span>) &#123;</span><br><span class="line">    jsList.push(str);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.jsList = jsList.concat();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>最终生成的页面截图：<br><img src="/2016/04/26/back-componentization/html.jpg" alt="html.jpg" title=""></p>
+<h1 id="实现步骤5：合并">实现步骤5：合并</h1><p>最后一步优化。为了减少请求，可以将不同组件所需的资源文件进行合并。这里推荐一个插件<a href="https://github.com/JacksonTian/loader" target="_blank" rel="external">loader</a>。</p>
+<p><a href="https://github.com/yalishizhude/back-componentization-example" target="_blank" rel="external">示例代码下载地址</a></p>
+<p><em>以上就是关于后端利用模板实现组件化的探索，实现上虽无问题，但是由于目前没有新的项目，无法在实际项目中使用，所以不知道会不会带来其它的“坑”。欢迎有兴趣的朋友使用后与我交流~</em></p>
+
+      
+      <hr>
+      <p>
+        博客：<a href="http://yalishizhude.github.io">http://yalishizhude.github.io</a><br>
+        作者：<a href="http://yalishizhude.github.io/about/">亚里士朱德</a>
+      </p>
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/node-js/"> #node.js </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/30/4angular/">Angular说：这个锅我不背~</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/19/front-back-separation/">图解基于node.js实现前后端分离</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/04/26/back-componentization/"
+     data-title="利用handlebars实现后端组件化"
+     data-content=""
+     data-url="http://yalishizhude.github.io/2016/04/26/back-componentization/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2016/04/26/back-componentization/"
+               data-title="利用handlebars实现后端组件化" data-url="http://yalishizhude.github.io/2016/04/26/back-componentization/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+          <!-- 多说热评文章-->
+          <p>热评文章</p>
+          <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="https://avatars0.githubusercontent.com/u/3870098?v=3&s=460" alt="亚里士朱德" />
+          <p class="site-author-name">亚里士朱德</p>
+        </div>
+        <p class="site-description motion-element">阅读，实践，学习，积累，分享</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/yalishizhude" target="_blank">github</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://yalishizhude.github.io" target="_blank">博客</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/arisjutle" target="_blank">微博</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.imooc.com/myclub/article/uid/1098050" target="_blank">慕课网</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.jobbole.com/members/yalishizhude" target="_blank">伯乐在线</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://geek.csdn.net/user/publishlist/yalishizhude" target="_blank">极客头条</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://toutiao.io/subjects/11510" target="_blank">开发者头条</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实现步骤1：模板"><span class="nav-number">1.</span> <span class="nav-text">实现步骤1：模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现步骤2：打包"><span class="nav-number">2.</span> <span class="nav-text">实现步骤2：打包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现步骤3：逻辑"><span class="nav-number">3.</span> <span class="nav-text">实现步骤3：逻辑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现步骤4：依赖"><span class="nav-number">4.</span> <span class="nav-text">实现步骤4：依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现步骤5：合并"><span class="nav-number">5.</span> <span class="nav-text">实现步骤5：合并</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+    <!-- google -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 内容1 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:600px"
+         data-ad-client="ca-pub-7203019032808513"
+         data-ad-slot="7541596384"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        我被看了 <span id="busuanzi_value_site_pv"></span> 次~您是第<span id="busuanzi_value_site_uv"></span>个小伙伴
+        <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan style='visibility:hidden;' id='cnzz_stat_icon_1255866986'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255866986%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+<div class="copyright">
+  
+  &copy; &nbsp;  2015 - 
+  2016
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">亚里士朱德</span>
+  <span class="with-love">&spades;</span>
+  <span class="author">yalishizhude@163.com</span>
+</div>
+
+<div class="powered-by" style="visibility:hidden;">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info" style="visibility:hidden;">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div> 
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yalishizhude"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+  
+
+
+  <!-- lazyload -->
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+      <script type="text/javascript">
+        jQuery(function() {
+            jQuery("#posts img").lazyload({
+              placeholder:"http://www.arao.me/loading.gif",
+                effect:"fadeIn"
+              });
+            });
+    </script>
+</body>
+</html>

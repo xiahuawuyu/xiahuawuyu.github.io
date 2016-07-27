@@ -1,0 +1,837 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="sogou_site_verification" content="WEhegz1Bts"/>
+<meta name="360-site-verification" content="ab30d6f9900b55bcfa635dbcf869b683" />
+
+  <meta name="google-site-verification" content="V9_Ys0xWOwD0m2gXTYo15k9tyfvl16H4YE5ijFHyo50" />
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="阅读，实践，学习，积累，分享" />
+
+
+
+  <meta name="keywords" content="js,underscore.js," />
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="亚里士朱德的博客" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'always'
+  };
+</script>
+
+
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?ab4daa880e07842428ff185fb1edbd6d";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+  <title> 优雅的underscore // 亚里士朱德的博客 </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">亚里士朱德的博客</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-subscribe">
+          <a href="/subscribe">
+            <i class="menu-item-icon icon-subscribe"></i> <br />
+            订阅博客
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html">
+            <i class="menu-item-icon icon-commonweal"></i> <br />
+            公益404
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              优雅的underscore
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-08-02
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/js/">js</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/08/02/beatiful-underscore/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/02/beatiful-underscore/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <p><em>Less write,less bug.</em></p>
+<p><em>Don’t repeat it.</em></p>
+<p>这是我写代码奉行的原则，而underscore.js很好地体现了上面两句话的精髓。</p>
+<p>之前学习angular的时候了解到了同类型的类库有backbone，然后一看backbone的介绍顿时莫名其妙了：轻度依赖jquery，重度依赖underscore。jquery不是最流行的js类库么？竟然重度依赖个没听说过的underscore，打开underscore官网，介绍别具一格：</p>
+<blockquote>
+<p>他解决了这个问题：“如果我面对一个空白的 HTML 页面，并希望立即开始工作，我需要什么？” 他弥补了 jQuery 没有实现的功能，同时又是 Backbone 必不可少的部分。</p>
+</blockquote>
+<p>“弥补了”、“必不可少”这牛皮吹得有点过了吧，于是了解使用了一下，发现确实是个好工具，于是把常用的几个函数做了一下整理。</p>
+<a id="more"></a>
+<hr>
+<h2 id="函数">函数</h2><h3 id="template">template</h3><p>经常看到这样的代码</p>
+<pre><code>var str = '&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"'+obj.className+'"</span> <span class="property">id</span>=<span class="string">"'+obj.id+'"</span>&gt;'+obj.<span class="property">name</span>+'&lt;/<span class="keyword">div</span>&gt;';
+</code></pre><p>在javascript中拼凑html字符串是一件很蛋疼的事情，尤其是穿插json变量的时候，现在有了template函数：</p>
+<pre><code><span class="keyword">var</span> temp = _.<span class="keyword">template</span>('&lt;<span class="keyword">div</span> class=<span class="string">"&lt;%=className%&gt;"</span> id=<span class="string">"&lt;%=id%&gt;"</span>&gt;&lt;%=name%&gt;&lt;/<span class="keyword">div</span>&gt;');
+<span class="keyword">var</span> str = temp(obj);
+</code></pre><p>像不像ejs？jsp？underscore！如果对<code>templateSettings</code>进行设置，可以变成改变模板变量的匹配规则，比如angular爱好者可以通过下面的函数改成花括号</p>
+<pre><code>_.templateSettings = <span class="special">{</span>
+  interpolate: /<span class="command">\{</span><span class="command">\{</span>(.+?)<span class="command">\}</span><span class="command">\}</span>/g
+<span class="special">}</span>;
+</code></pre><h3 id="_-now()">_.now()</h3><p>以前是不是这么取时间戳？</p>
+<pre><code><span class="built_in">var</span> <span class="built_in">date</span> = <span class="literal">new</span> <span class="built_in">Date</span>();
+<span class="built_in">var</span> seconds = <span class="built_in">date</span><span class="built_in">.</span>getTimes();
+</code></pre><p>现在可以这么简单</p>
+<pre><code><span class="variable"><span class="keyword">var</span> seconds</span> = _.now();
+</code></pre><h3 id="uniqueId">uniqueId</h3><p>给多个元素创建id以前这么写</p>
+<pre><code>var dom = document.createElement(<span class="string">'div'</span>);
+<span class="keyword">for</span>(var <span class="built_in">i</span>=<span class="number">0</span>;<span class="built_in">i</span>&lt;arr.<span class="built_in">length</span>;<span class="built_in">i</span>++)<span class="cell">{
+    dom.id = <span class="string">'xxx'</span>+i;
+}</span>
+</code></pre><p>有时候id容易重复，如果比如数组重复执行或者和其它逻辑冲突，现在这么写100%不会冲突</p>
+<pre><code>var dom = document.createElement(<span class="string">'div'</span>);
+<span class="keyword">for</span>(var <span class="built_in">i</span>=<span class="number">0</span>;<span class="built_in">i</span>&lt;arr.<span class="built_in">length</span>;<span class="built_in">i</span>++)<span class="cell">{
+    dom.id = _.uniqueId(<span class="string">'xxx'</span>);
+}</span>
+</code></pre><h3 id="random">random</h3><p>我要随机数，而且是整数</p>
+<pre><code><span class="function"><span class="title">parseInt</span><span class="params">(Math.random()</span></span>*<span class="number">100</span>)
+</code></pre><p>如果改一下，要1到100的整数？用三目运算？函数？还是underscore吧~</p>
+<pre><code>_.<span class="function"><span class="title">random</span><span class="params">(<span class="number">1</span>,<span class="number">100</span>)</span></span>
+</code></pre><h3 id="delay">delay</h3><p>js并行写法</p>
+<pre><code>setTimeout<span class="list">(<span class="keyword">function</span><span class="list">()</span>{
+    console.log<span class="list">(<span class="keyword">obj</span>.id)</span><span class="comment">;</span>
+}, <span class="number">0</span>)</span><span class="comment">;</span>
+</code></pre><p>用underscore并行</p>
+<pre><code>_.<span class="command">delay</span>(function(){
+    console.<span class="command">log</span>(obj.<span class="property">id</span>);
+}, <span class="number">0</span>, obj.<span class="property">id</span>);
+</code></pre><p>参数传递很方便        </p>
+<h2 id="对象">对象</h2><h3 id="isEqual">isEqual</h3><pre><code><span class="variable"><span class="keyword">var</span> obj</span> = {id:<span class="number">1</span>, name:'tom'};
+<span class="variable"><span class="keyword">var</span> _obj</span> = {id:<span class="number">1</span>, name:'tom'};
+
+<span class="variable"><span class="keyword">var</span> arr</span> = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];
+<span class="variable"><span class="keyword">var</span> _arr</span> = [<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>];
+</code></pre><p>这两个对象怎么比较是否相等？函数？循环遍历？</p>
+<pre><code>_.<span class="function"><span class="title">isEqual</span><span class="params">(obj, _obj)</span></span> ==&gt; true
+_.<span class="function"><span class="title">isEqual</span><span class="params">(arr, _arr)</span></span> ==&gt; false
+</code></pre><p>轻轻松松3秒钟~</p>
+<h3 id="pick/omit">pick/omit</h3><p>服务器返回的结果可能是这样的</p>
+<pre><code><span class="label">var</span> old = {k1: <span class="literal">v1</span>, k2: <span class="literal">v2</span>, k3: <span class="literal">v3</span>, k4: <span class="literal">v4</span>, k5: <span class="literal">v5</span>}<span class="comment">;</span>
+</code></pre><p>我们需要的可能是这样的</p>
+<pre><code>var <span class="keyword">new</span> = {<span class="string">k1:</span> old.k1, <span class="string">k3:</span> old.k3};
+</code></pre><p>每个属性抄一遍多麻烦~轮到pick/omit这一对好基友上场了</p>
+<pre><code><span class="keyword">var</span> new1 = _.pick(<span class="keyword">old</span>, <span class="string">'k1'</span>, <span class="string">'k3'</span>);
+<span class="keyword">var</span> new2 = _.omit(<span class="keyword">old</span>, <span class="string">'k2'</span>, <span class="string">'k4'</span>, <span class="string">'k5'</span>);
+</code></pre><p>反正过滤得多就用pick，复制得多就用omit</p>
+<h3 id="extend">extend</h3><pre><code>var info = {<span class="string">id:</span><span class="number">1</span>, <span class="string">name:</span><span class="string">'jack'</span>, <span class="string">sex:</span> <span class="string">'male'</span>, <span class="string">age:</span> <span class="string">'22'</span>};
+var score = {<span class="string">id:</span><span class="number">1</span>, <span class="string">math:</span><span class="number">88</span>, <span class="string">biology:</span><span class="number">64</span>, <span class="string">chinese:</span> <span class="number">55</span>};
+</code></pre><p>要把个人信息和成绩合并怎么办？一个属性一个属性的赋值？no~</p>
+<pre><code><span class="variable"><span class="keyword">var</span> student</span> = _.extend(info, score);
+</code></pre><h3 id="map">map</h3><p>遍历对象</p>
+<pre><code><span class="function"><span class="keyword">function</span><span class="params">(obj)</span></span>{
+    <span class="keyword">for</span>(<span class="keyword">var</span> e <span class="keyword">in</span> obj){
+        <span class="comment">//...</span>
+    }
+}
+</code></pre><p>用map</p>
+<pre><code>_.map(obj,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{value, key}{
+    <span class="comment">//...</span>
+});
+</code></pre><h2 id="数组">数组</h2><h3 id="union">union</h3><p>两个数组要合并，循环去重？一个函数搞定</p>
+<pre><code>_.<span class="keyword">union</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">101</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">10</span>], [<span class="number">2</span>, <span class="number">1</span>]);
+==&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">101</span>, <span class="number">10</span>]
+</code></pre><h3 id="range">range</h3><p>来个整数数组</p>
+<pre><code><span class="keyword">var</span> arr = [];
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)<span class="comment">{
+    arr[i] = i+1;
+}</span>
+</code></pre><p>明明可以一行代码搞定</p>
+<pre><code>var arr = _.range(<span class="number">1</span>,<span class="number">100</span>);
+</code></pre><h3 id="each">each</h3><p>写了多少便的经典代码：</p>
+<pre><code>for<span class="comment">(var i=0;i&lt;arr.length;i++)</span>{
+    <span class="comment">//arr[i]...</span>
+}
+</code></pre><p>改一改吧</p>
+<pre><code>_.each(arr, <span class="function"><span class="keyword">function</span><span class="params">(obj, index)</span></span>{
+    console.<span class="built_in">log</span>(<span class="built_in">index</span>);
+    console.<span class="built_in">log</span>(obj);
+});
+</code></pre><h3 id="reduce">reduce</h3><p>累加求和用得再多不过了</p>
+<pre><code>var count = <span class="number">0</span>;
+<span class="keyword">for</span>(var <span class="built_in">i</span>=<span class="number">0</span>;<span class="built_in">i</span>&lt;<span class="built_in">i</span>&lt;arr.<span class="built_in">length</span>;<span class="built_in">i</span>++)<span class="cell">{
+    count += arr[i].price;
+}</span>
+</code></pre><p>多么简洁~</p>
+<pre><code><span class="keyword">var</span> count = _.reduce([{name:<span class="string">'x'</span>, price:<span class="number">10</span>}, {name:<span class="string">'y'</span>, price:<span class="number">20</span>}], <span class="function"><span class="keyword">function</span><span class="params">(memo, item)</span></span>{ <span class="keyword">return</span> memo + item.price; }, <span class="number">0</span>);
+</code></pre><h3 id="filter/where">filter/where</h3><p>过滤数组元素可以用each来实现，但是filter/where用于过滤更方便</p>
+<pre><code>_.filter([-<span class="number">1</span>, <span class="number">2</span>, -<span class="number">3</span>, -<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], function(num){ <span class="keyword">return</span> num &gt; <span class="number">0</span>; });
+==&gt; [<span class="number">2</span>, <span class="number">5</span>, <span class="number">6</span>]
+
+_.where([{<span class="string">author:</span><span class="string">'zdl'</span>, <span class="string">year:</span><span class="number">2015</span>},{<span class="string">title:</span> <span class="string">"Cymbeline"</span>, <span class="string">author:</span> <span class="string">"Shakespeare"</span>, <span class="string">year:</span> <span class="number">1611</span>}]], {<span class="string">author:</span> <span class="string">"Shakespeare"</span>, <span class="string">year:</span> <span class="number">1611</span>});
+==&gt; [{<span class="string">title:</span> <span class="string">"Cymbeline"</span>, <span class="string">author:</span> <span class="string">"Shakespeare"</span>, <span class="string">year:</span> <span class="number">1611</span>}]
+</code></pre><h3 id="pluck">pluck</h3><p>用来抽取复杂数组的数据</p>
+<pre><code>_.pluck([{<span class="string">name:</span> <span class="string">'moe'</span>, <span class="string">age:</span> <span class="number">40</span>}, {<span class="string">name:</span> <span class="string">'larry'</span>, <span class="string">age:</span> <span class="number">50</span>}, {<span class="string">name:</span> <span class="string">'curly'</span>, <span class="string">age:</span> <span class="number">60</span>}], <span class="string">'name'</span>);
+==&gt; [<span class="string">"moe"</span>, <span class="string">"larry"</span>, <span class="string">"curly"</span>]
+</code></pre><h3 id="sortBy">sortBy</h3><p>排序太常用了，不传函数的情况下按大小排序，传函数的情况下可以通过计算结果对原数组排序</p>
+<pre><code>_.sortBy([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, -<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]);
+==&gt; [-<span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>]
+
+_.sortBy([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, -<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], function(num){ <span class="keyword">return</span> num*num})
+[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, -<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]
+</code></pre><p>更多内容请查看<a href="http://www.bootcss.com/p/underscore" target="_blank" rel="external">API文档</a></p>
+
+      
+      <hr>
+      <p>
+        博客：<a href="http://yalishizhude.github.io">http://yalishizhude.github.io</a><br>
+        作者：<a href="http://yalishizhude.github.io/about/">亚里士朱德</a>
+      </p>
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/"> #js </a>
+          
+            <a href="/tags/underscore-js/"> #underscore.js </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/08/18/js-async/">浅谈js中多并发的一些处理方法</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/28/makeIDE/">windows下搭建前端开发IDE（maven + grunt + tomcat + cmd + sublime）</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/08/02/beatiful-underscore/"
+     data-title="优雅的underscore"
+     data-content=""
+     data-url="http://yalishizhude.github.io/2015/08/02/beatiful-underscore/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2015/08/02/beatiful-underscore/"
+               data-title="优雅的underscore" data-url="http://yalishizhude.github.io/2015/08/02/beatiful-underscore/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+          <!-- 多说热评文章-->
+          <p>热评文章</p>
+          <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="https://avatars0.githubusercontent.com/u/3870098?v=3&s=460" alt="亚里士朱德" />
+          <p class="site-author-name">亚里士朱德</p>
+        </div>
+        <p class="site-description motion-element">阅读，实践，学习，积累，分享</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/yalishizhude" target="_blank">github</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://yalishizhude.github.io" target="_blank">博客</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/arisjutle" target="_blank">微博</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.imooc.com/myclub/article/uid/1098050" target="_blank">慕课网</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.jobbole.com/members/yalishizhude" target="_blank">伯乐在线</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://geek.csdn.net/user/publishlist/yalishizhude" target="_blank">极客头条</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://toutiao.io/subjects/11510" target="_blank">开发者头条</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">1.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#template"><span class="nav-number">1.1.</span> <span class="nav-text">template</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#_-now()"><span class="nav-number">1.2.</span> <span class="nav-text">_.now()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uniqueId"><span class="nav-number">1.3.</span> <span class="nav-text">uniqueId</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#random"><span class="nav-number">1.4.</span> <span class="nav-text">random</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delay"><span class="nav-number">1.5.</span> <span class="nav-text">delay</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">2.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#isEqual"><span class="nav-number">2.1.</span> <span class="nav-text">isEqual</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pick/omit"><span class="nav-number">2.2.</span> <span class="nav-text">pick/omit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#extend"><span class="nav-number">2.3.</span> <span class="nav-text">extend</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">2.4.</span> <span class="nav-text">map</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#union"><span class="nav-number">3.1.</span> <span class="nav-text">union</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#range"><span class="nav-number">3.2.</span> <span class="nav-text">range</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#each"><span class="nav-number">3.3.</span> <span class="nav-text">each</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce"><span class="nav-number">3.4.</span> <span class="nav-text">reduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter/where"><span class="nav-number">3.5.</span> <span class="nav-text">filter/where</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pluck"><span class="nav-number">3.6.</span> <span class="nav-text">pluck</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sortBy"><span class="nav-number">3.7.</span> <span class="nav-text">sortBy</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+    <!-- google -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 内容1 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:600px"
+         data-ad-client="ca-pub-7203019032808513"
+         data-ad-slot="7541596384"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        我被看了 <span id="busuanzi_value_site_pv"></span> 次~您是第<span id="busuanzi_value_site_uv"></span>个小伙伴
+        <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan style='visibility:hidden;' id='cnzz_stat_icon_1255866986'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255866986%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+<div class="copyright">
+  
+  &copy; &nbsp;  2015 - 
+  2016
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">亚里士朱德</span>
+  <span class="with-love">&spades;</span>
+  <span class="author">yalishizhude@163.com</span>
+</div>
+
+<div class="powered-by" style="visibility:hidden;">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info" style="visibility:hidden;">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div> 
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yalishizhude"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+  
+
+
+  <!-- lazyload -->
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+      <script type="text/javascript">
+        jQuery(function() {
+            jQuery("#posts img").lazyload({
+              placeholder:"http://www.arao.me/loading.gif",
+                effect:"fadeIn"
+              });
+            });
+    </script>
+</body>
+</html>
